@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "historical-analysis"
+version = "0.1.0"
+description = ""
+authors = ["Rishabh Sharma <99526730+sharma-rishabh@users.noreply.github.com >"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+jugaad-data = "^0.26"
+pandas = "^2.2.1"
+pydantic = "^2.6.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
