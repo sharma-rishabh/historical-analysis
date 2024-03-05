@@ -55,20 +55,15 @@ class Analyzer:
 
         profitable_trades = [trade for trade in trade_analysis if trade.return_on_risk >= 0]
 
-        loss_making_trades = [trade for trade in trade_analysis if trade.return_on_risk < 0]
 
         average_return_on_profit = self.avg_return(profitable_trades)
-        average_return_on_loss = self.avg_return(loss_making_trades)
 
         profit_percent = round(len(profitable_trades) / len(trade_analysis), 2)
-        loss_percent = round(len(loss_making_trades) / len(trade_analysis), 2)
 
         return CumulativeAnalysisResult(
             avg_rate_of_return,
             avg_days,
             profit_percent,
-            loss_percent,
             average_return_on_profit,
-            average_return_on_loss,
             trade_analysis
         )
