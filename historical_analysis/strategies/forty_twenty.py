@@ -1,4 +1,5 @@
 import pandas as pd
+from models.portfolio import HistoricalAnalysisResult, Holding
 from trade import Trade
 from typing import List
 
@@ -60,3 +61,7 @@ class FortyTwenty:
             trades.append(current_trade)
 
         return trades
+
+    def get_stop_loss(self) -> float:
+        self.preprocess()
+        return self.df.iloc[-1]["LOWEST_20D"]
