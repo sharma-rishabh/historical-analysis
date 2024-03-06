@@ -1,7 +1,0 @@
-{
-  "capital": 5000,
-  "risk": 0.1,
-  "symbols": ["TATASTEEL"],
-  "strategies": ["FortyTwenty"],
-  "years": 10
-}
