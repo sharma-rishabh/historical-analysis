@@ -1,5 +1,5 @@
 import click
-from .utils import  validate_path
+from .utils import  validate_path, write_portfolio
 from models import Portfolio
 
 @click.command()
@@ -27,7 +27,5 @@ def create_portfolio(
 ):
     portfolio = Portfolio(capital=capital, risk_percent=risk_percent, holdings=[])
 
-    with open(portfolio_name, "w") as file:
-        file.write(portfolio.model_dump_json())
-
+    write_portfolio(portfolio_name, portfolio)
     click.secho(f"Portfolio was created.", bold=True)

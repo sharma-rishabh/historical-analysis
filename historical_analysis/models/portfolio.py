@@ -6,9 +6,15 @@ from pydantic import BaseModel
 
 
 class Portfolio(BaseModel):
+    current_id: int = 0
     capital: float
     risk_percent: float
     holdings: List["Holding"]
+
+    def get_next_id(self):
+        self.current_id += 1
+        return self.current_id
+    
 
     def active_stocks(self)->List['Holding']:
         return [holding for holding in self.holdings if not holding.sold]
@@ -17,12 +23,15 @@ class Portfolio(BaseModel):
     def invested(self)->float:
         return reduce(lambda x,y: x + (y.buying_price * y.units), self.active_stocks(), 0)
     
+
     def current_value(self) -> float:
         return reduce(lambda x,y: x + (y.current_price * y.units), self.active_stocks(), 0)
 
+
     def remaining_capital(self) -> float:
         return self.capital - self.invested()
-    
+
+
     def return_percent(self) -> float:
         total_returns = self.current_value() - self.invested()
         return total_returns/self.invested
@@ -51,7 +60,7 @@ class Portfolio(BaseModel):
     )-> 'Holding':
         available_investment = self.remaining_capital() * buying_capacity
         units = self.get_units(available_investment, buying_price, stop_loss)
-
+        
         holding = Holding(
                 symbol=symbol,
                 units=units,
@@ -65,13 +74,15 @@ class Portfolio(BaseModel):
             )   
         if units <= 0:
             return holding
-        
+
+        holding.id = self.get_next_id()        
         self.holdings.append(holding)
         return holding
     
 
 
 class Holding(BaseModel):
+    id: int | None = None
     symbol: str
     units: int
     current_price: float
