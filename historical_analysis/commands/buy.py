@@ -1,7 +1,6 @@
 import click
-from .utils import  validate_path, strategy_class, get_historical_data
+from .utils import  validate_path, get_current_price, get_stop_loss, read_portfolio, write_portfolio, strategy_class
 from datetime import datetime, date
-from jugaad_data.nse import NSELive
 from models import Holding, Portfolio
 from analyzer import Analyzer
 
@@ -68,19 +67,10 @@ def buy(
     Buy a stock by giving a symbol, portfolio and strategy and the results are stored back in the portfolio. The historical analysis result is stored for the last 10 years.
     """
 
-    nse = NSELive()
-    q = nse.stock_quote(symbol)
-    current_price: float = q["priceInfo"]["lastPrice"]
-
     strategy = strategy_class[strategy_name]["class"]
-    days = strategy_class[strategy_name]["min_days_required"]
-
-    stock_data = get_historical_data(symbol, days)
-    stop_loss = strategy(stock_data).get_stop_loss()
-
-    with open(portfolio, "r") as raw_portfolio:
-        parsed_pf = Portfolio.model_validate_json(raw_portfolio.read())
-
+    current_price = get_current_price(symbol)
+    stop_loss = get_stop_loss(symbol, strategy_name)
+    parsed_pf = read_portfolio(portfolio)
 
     historical_analysis_result = Analyzer(symbol, parsed_pf, strategy, 3650).analyse()
 
@@ -95,7 +85,5 @@ def buy(
         historical_analysis_result,
     )
 
-    with open(portfolio, "w") as file:
-        file.write(parsed_pf.model_dump_json())
-
+    write_portfolio(portfolio, parsed_pf)
     print_buying_result(holding)

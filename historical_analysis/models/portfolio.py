@@ -68,7 +68,7 @@ class Portfolio(BaseModel):
         
         self.holdings.append(holding)
         return holding
-
+    
 
 
 class Holding(BaseModel):
@@ -82,6 +82,14 @@ class Holding(BaseModel):
     sold: bool
     historical_data: "HistoricalAnalysisResult"
 
+    def update_stop_loss(self, new_stop_loss: float)-> bool:
+        is_stop_loss_changed = self.stop_loss != new_stop_loss
+        self.stop_loss = new_stop_loss
+        return is_stop_loss_changed 
+    
+    def update_current_price(self, new_price: float)->bool:
+        self.current_price = new_price
+        return True
 
 class HistoricalAnalysisResult(BaseModel):
     returns: float
