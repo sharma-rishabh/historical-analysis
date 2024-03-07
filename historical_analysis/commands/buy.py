@@ -1,10 +1,10 @@
 import click
-from . import  validate_path, strategy_class, get_historical_data
+from .utils import  validate_path, strategy_class, get_historical_data
 from datetime import datetime, date
 from jugaad_data.nse import NSELive
-from models import Holding, HistoricalAnalysisResult, Portfolio
+from models import Holding, Portfolio
 from analyzer import Analyzer
-from risk_profile import RiskProfile
+
 
 def print_buying_result(holding: Holding):
     has_bought = holding.units > 0
@@ -81,17 +81,8 @@ def buy(
     with open(portfolio, "r") as raw_portfolio:
         parsed_pf = Portfolio.model_validate_json(raw_portfolio.read())
 
-    ten_year_stock_data = get_historical_data(symbol, 3650)
-    trades = strategy(ten_year_stock_data).execute()
-    profile = RiskProfile(parsed_pf.capital, parsed_pf.risk_percent)
-    result = Analyzer(trades, profile).analyse()
 
-    historical_analysis_result = HistoricalAnalysisResult(
-        returns=result.average_return_on_risk,
-        days_per_return=result.average_days,
-        total_trades=len(trades),
-        winning_percentage=result.profitable_trades,
-    )
+    historical_analysis_result = Analyzer(symbol, parsed_pf, strategy, 3650).analyse()
 
     holding = parsed_pf.buy_stock(
         symbol,

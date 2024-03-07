@@ -1,10 +1,9 @@
 import pandas as pd
-from models.portfolio import HistoricalAnalysisResult, Holding
 from trade import Trade
 from typing import List
+from .strategy import Strategy
 
-
-class FortyTwenty:
+class FortyTwenty(Strategy):
     def __init__(self, df: pd.DataFrame):
         self.df = df.copy()
 

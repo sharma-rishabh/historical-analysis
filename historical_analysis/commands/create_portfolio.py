@@ -1,5 +1,5 @@
 import click
-from . import  validate_path
+from .utils import  validate_path
 from models import Portfolio
 
 @click.command()

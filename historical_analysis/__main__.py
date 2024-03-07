@@ -1,3 +1,3 @@
-from commands.stock import stock
+from commands import stock
 
 stock()

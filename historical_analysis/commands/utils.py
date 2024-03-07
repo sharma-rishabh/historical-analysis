@@ -1,5 +1,4 @@
 import os
-import click
 import pandas as pd
 from typing import Dict
 from datetime import date, timedelta
