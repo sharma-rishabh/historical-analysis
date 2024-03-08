@@ -19,6 +19,10 @@ def print_updated_stop_loss(holding: Holding):
     help="Portfolio for which you want to update the stop loss.",
 )
 def update(portfolio: click.Path):
+    """
+    Update the stop loss and current price.
+    """
+
     parsed_pf = read_portfolio(portfolio)
     updated_holdings = [holding for holding in parsed_pf.active_stocks() if holding.update_stop_loss(get_stop_loss(holding.symbol, holding.strategy))]
 

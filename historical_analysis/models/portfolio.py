@@ -11,6 +11,28 @@ class Portfolio(BaseModel):
     risk_percent: float
     holdings: List["Holding"]
 
+    def find_by_id(self, id: int) -> 'Holding':
+        return [holding for holding in self.active_stocks() if holding.id == id][0]
+    
+    def find_by_symbol(self, symbol: str) -> List['Holding']:
+        return [holding for holding in self.active_stocks() if holding.symbol == symbol]
+    
+    def sell_by_symbol(self, symbol: str, selling_price: float | None) -> float:
+        holdings_to_sell = self.find_by_symbol(symbol)
+        for holding in holdings_to_sell:
+            sold_for = holding.sell(selling_price)
+        return sold_for
+    
+    def sell_by_id(self, id: int, selling_price: float | None) -> float:
+        holding_to_sell = self.find_by_id(id)
+        return holding_to_sell.sell(selling_price)
+
+    def sell_holdings(self, id: int|None, symbol: str|None, selling_price: float|None) -> float:
+        if id:
+            return self.sell_by_id(id, selling_price)
+        
+        return self.sell_by_symbol(symbol, selling_price)
+
     def get_next_id(self):
         self.current_id += 1
         return self.current_id
@@ -92,6 +114,7 @@ class Holding(BaseModel):
     buying_date: date
     sold: bool
     historical_data: "HistoricalAnalysisResult"
+    selling_price: float | None = None
 
     def update_stop_loss(self, new_stop_loss: float)-> bool:
         is_stop_loss_changed = self.stop_loss != new_stop_loss
@@ -101,6 +124,11 @@ class Holding(BaseModel):
     def update_current_price(self, new_price: float)->bool:
         self.current_price = new_price
         return True
+    
+    def sell(self, selling_price: float | None) -> float:
+        self.selling_price = selling_price if selling_price else self.stop_loss
+        self.sold = True
+        return self.selling_price
 
 class HistoricalAnalysisResult(BaseModel):
     returns: float

@@ -25,6 +25,9 @@ from models import Portfolio
 def create_portfolio(
     portfolio_name: click.types.Path, capital: float, risk_percent: float
 ):
+    """
+    Create a new portfolio.
+    """
     portfolio = Portfolio(capital=capital, risk_percent=risk_percent, holdings=[])
 
     write_portfolio(portfolio_name, portfolio)
