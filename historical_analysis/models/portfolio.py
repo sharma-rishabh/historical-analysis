@@ -11,6 +11,11 @@ class Portfolio(BaseModel):
     risk_percent: float
     holdings: List["Holding"]
 
+    def update_capital(self, amount: float) -> float:
+        print(amount)
+        self.capital += amount
+        return self.capital
+
     def find_by_id(self, id: int) -> "Holding":
         return [holding for holding in self.active_stocks() if holding.id == id][0]
 
@@ -19,13 +24,19 @@ class Portfolio(BaseModel):
 
     def sell_by_symbol(self, symbol: str, selling_price: float | None) -> float:
         holdings_to_sell = self.find_by_symbol(symbol)
+        returns = 0
         for holding in holdings_to_sell:
             sold_for = holding.sell(selling_price)
+            returns += holding.final_returns()
+
+        self.update_capital(returns)
         return sold_for
 
     def sell_by_id(self, id: int, selling_price: float | None) -> float:
         holding_to_sell = self.find_by_id(id)
-        return holding_to_sell.sell(selling_price)
+        final_selling_price = holding_to_sell.sell(selling_price)
+        self.update_capital(holding_to_sell.final_returns())
+        return final_selling_price
 
     def sell_holdings(
         self, id: int | None, symbol: str | None, selling_price: float | None
@@ -56,6 +67,8 @@ class Portfolio(BaseModel):
         return self.capital - self.invested()
 
     def return_percent(self) -> float:
+        if self.invested() == 0:
+            return 0
         total_returns = self.current_value() - self.invested()
         return total_returns / self.invested()
 
@@ -135,7 +148,13 @@ class Holding(BaseModel):
         return self.selling_price
 
     def returns_on_risk(self) -> float:
-        return ((self.current_price - self.buying_price) * self.units) / self.risk
+        return self.returns() / self.risk
+
+    def returns(self) -> float:
+        return (self.current_price - self.buying_price) * self.units
+    
+    def final_returns(self) -> float:
+        return (self.selling_price - self.buying_price) * self.units
 
 
 class HistoricalAnalysisResult(BaseModel):

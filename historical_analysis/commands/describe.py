@@ -41,13 +41,15 @@ def print_summary(portfolio: Portfolio):
 
 def get_holding(holding: Holding):
     is_more_than_buying_price = holding.current_price > holding.buying_price
-    current_price_color = 'bright_green' if is_more_than_buying_price else 'bright_red'
-    current_price = click.style(str(holding.current_price), bold=True, fg=current_price_color) 
+    current_price_color = "bright_green" if is_more_than_buying_price else "bright_red"
+    current_price = click.style(
+        str(holding.current_price), bold=True, fg=current_price_color
+    )
 
     is_profitable = holding.returns_on_risk() > 0
     return_color = "bright_green" if is_profitable else "bright_red"
     return_on_risk = click.style(
-        str(holding.returns_on_risk()), bold=True, fg=return_color
+        str(round(holding.returns_on_risk(), 2)), bold=True, fg=return_color
     )
 
     return [
@@ -72,8 +74,11 @@ def get_holding(holding: Holding):
 )
 def describe(portfolio: click.types.Path):
     parsed_pf = read_portfolio(portfolio)
-
+    click.clear()
+    
+    click.secho("\n\nSUMMARY", bold=True)
     print_summary(parsed_pf)
+
     click.secho("\n\nHOLDINGS", bold=True)
     holding_headers = [
         "Id",
@@ -82,7 +87,7 @@ def describe(portfolio: click.types.Path):
         "Units",
         "LTP",
         "Risk",
-        "Returns On Risk",
+        "RoR",
         "Stop Loss",
     ]
 

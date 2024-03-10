@@ -1,5 +1,5 @@
 import click
-from .utils import read_portfolio, validate_path
+from .utils import read_portfolio, validate_path, write_portfolio
 
 @click.command()
 @click.option(
@@ -47,4 +47,6 @@ def sell(
     symbol_or_id = symbol if symbol else id
     bold_symbol_or_id =  click.style(f"{symbol_or_id}", bold=True)
     bold_selling_price = click.style(f"{selling_price}", bold=True)
+
+    write_portfolio(portfolio, parsed_pf)
     click.echo(f"Sold holding {bold_symbol_or_id} for {bold_selling_price}")
