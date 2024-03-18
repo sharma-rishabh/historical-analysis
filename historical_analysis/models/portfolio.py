@@ -12,7 +12,6 @@ class Portfolio(BaseModel):
     holdings: List["Holding"]
 
     def update_capital(self, amount: float) -> float:
-        print(amount)
         self.capital += amount
         return self.capital
 
@@ -69,8 +68,8 @@ class Portfolio(BaseModel):
     def return_percent(self) -> float:
         if self.invested() == 0:
             return 0
-        total_returns = self.current_value() - self.invested()
-        return total_returns / self.invested()
+        total_returns = (self.current_value() + self.remaining_capital()) - self.capital
+        return total_returns / self.capital
 
     def get_units(self, investment_amount, buying_price, stop_loss) -> int:
         risk_per_unit = buying_price - stop_loss
@@ -152,7 +151,7 @@ class Holding(BaseModel):
 
     def returns(self) -> float:
         return (self.current_price - self.buying_price) * self.units
-    
+
     def final_returns(self) -> float:
         return (self.selling_price - self.buying_price) * self.units
 

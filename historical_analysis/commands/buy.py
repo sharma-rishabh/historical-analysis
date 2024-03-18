@@ -1,7 +1,14 @@
 import click
-from .utils import  validate_path, get_current_price, get_stop_loss, read_portfolio, write_portfolio, strategy_class
+from .utils import (
+    validate_path,
+    get_current_price,
+    get_stop_loss,
+    read_portfolio,
+    write_portfolio,
+    strategy_class,
+)
 from datetime import datetime, date
-from models import Holding, Portfolio
+from models import Holding
 from analyzer import Analyzer
 
 
@@ -14,6 +21,7 @@ def print_buying_result(holding: Holding):
         else f"Couldn't buy {holding.symbol}"
     )
     click.secho(text, bg=bg_color, fg="bright_white")
+
 
 @click.command()
 @click.option(
