@@ -63,6 +63,7 @@ def print_buying_result(holding: Holding):
     default=1.0,
     help="How much of the remaining capital you wish to invest in the stock.",
 )
+@click.option("--info-only", is_flag=True, help="Simulate the buy only don't actually store the results.")
 def buy(
     symbol: str,
     buying_price: float,
@@ -70,6 +71,7 @@ def buy(
     strategy_name: str,
     buy_date: datetime,
     buying_capacity: float,
+    info_only: bool
 ):
     """
     Buy a stock by giving a symbol, portfolio and strategy and the results are stored back in the portfolio. The historical analysis result is stored for the last 10 years.
@@ -93,5 +95,6 @@ def buy(
         historical_analysis_result,
     )
 
-    write_portfolio(portfolio, parsed_pf)
+    if not info_only:
+        write_portfolio(portfolio, parsed_pf)
     print_buying_result(holding)
