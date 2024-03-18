@@ -1,6 +1,6 @@
 import click
 
-from .utils import strategy_class, validate_path
+from .utils import strategy_class, validate_path, read_portfolio
 from models.portfolio import Portfolio, HistoricalAnalysisResult
 from analyzer import Analyzer
 
@@ -65,9 +65,8 @@ def historical_analysis(
 
     symbols = symbols.split(",")
 
-    with open(portfolio, "r") as raw_portfolio:
-        parsed_pf = Portfolio.model_validate_json(raw_portfolio.read())
-
+    parsed_pf = read_portfolio(portfolio)
+    
     parsed_strategies = [
         strategy_class[name]["class"] for name in strategies.split(",")
     ]

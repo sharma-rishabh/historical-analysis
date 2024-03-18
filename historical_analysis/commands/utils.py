@@ -34,7 +34,6 @@ def get_stop_loss(symbol: str, strategy_name: str) -> float:
     return strategy(stock_data).get_stop_loss()
 
 def get_breakout(symbol: str, strategy_name: str) -> bool:
-    print(symbol)
     strategy = strategy_class[strategy_name]["class"]
     days = strategy_class[strategy_name]["min_days_required"]
 
@@ -43,7 +42,6 @@ def get_breakout(symbol: str, strategy_name: str) -> bool:
         today = nse.stock_quote(symbol)['priceInfo']
         stock_data = get_historical_data(symbol, days)
     except:
-         print(f"Couldn't fetch data for {symbol}")
          return False
 
 

@@ -7,6 +7,7 @@ from .sell import sell
 from .describe import describe
 from .add_capital import add_capital
 from .breakout import breakout
+from .breakout_with_analysis  import breakout_with_analysis
 
 
 @click.group()
@@ -21,4 +22,4 @@ stock.add_command(update)
 stock.add_command(sell)
 stock.add_command(describe)
 stock.add_command(add_capital)
-stock.add_command(breakout)
+stock.add_command(breakout_with_analysis)
