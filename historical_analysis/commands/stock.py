@@ -6,6 +6,7 @@ from .create_portfolio import create_portfolio
 from .sell import sell
 from .describe import describe
 from .add_capital import add_capital
+from .breakout import breakout
 
 
 @click.group()
@@ -20,3 +21,4 @@ stock.add_command(update)
 stock.add_command(sell)
 stock.add_command(describe)
 stock.add_command(add_capital)
+stock.add_command(breakout)

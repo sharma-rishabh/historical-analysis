@@ -8,7 +8,6 @@ from models import Portfolio
 from strategies.forty_twenty import FortyTwenty
 
 
-
 strategy_class: Dict[str, Dict] = {
     "FortyTwenty": {"class": FortyTwenty, "min_days_required": 100},
 }
@@ -34,6 +33,22 @@ def get_stop_loss(symbol: str, strategy_name: str) -> float:
     stock_data = get_historical_data(symbol, days)
     return strategy(stock_data).get_stop_loss()
 
+def get_breakout(symbol: str, strategy_name: str) -> bool:
+    print(symbol)
+    strategy = strategy_class[strategy_name]["class"]
+    days = strategy_class[strategy_name]["min_days_required"]
+
+    try:
+        nse = NSELive()
+        today = nse.stock_quote(symbol)['priceInfo']
+        stock_data = get_historical_data(symbol, days)
+    except:
+         print(f"Couldn't fetch data for {symbol}")
+         return False
+
+
+    return strategy(stock_data).breakout(today)
+
 
 def validate_path(ctx, param, value):
     if value is None:
@@ -45,7 +60,7 @@ def validate_path(ctx, param, value):
 def read_portfolio(path: Path) -> Portfolio:
         with open(path, "r") as raw_portfolio:
             return Portfolio.model_validate_json(raw_portfolio.read())
-        
+
 def write_portfolio(path: Path, portfolio: Portfolio):
         with open(path, "w") as file:
             file.write(portfolio.model_dump_json(indent=4))

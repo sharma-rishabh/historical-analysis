@@ -2,6 +2,8 @@ import pandas as pd
 from trade import Trade
 from typing import List
 from .strategy import Strategy
+from datetime import datetime
+
 
 class FortyTwenty(Strategy):
     def __init__(self, df: pd.DataFrame):
@@ -36,15 +38,14 @@ class FortyTwenty(Strategy):
             if current_trade is None and self.can_buy(row):
 
                 current_trade = Trade(
-                        buy_price=row["LTP"],
-                        start_date=row["DATE"],
-                        initial_stop_loss=row["LOWEST_20D"],
-                    )
+                    buy_price=row["LTP"],
+                    start_date=row["DATE"],
+                    initial_stop_loss=row["LOWEST_20D"],
+                )
             else:
 
-                if (
-                    current_trade is not None
-                    and self.can_update_sell_price(current_trade, row)
+                if current_trade is not None and self.can_update_sell_price(
+                    current_trade, row
                 ):
                     current_trade.update_stop_loss(row["LOWEST_20D"])
 
@@ -64,3 +65,27 @@ class FortyTwenty(Strategy):
     def get_stop_loss(self) -> float:
         self.preprocess()
         return self.df.iloc[-1]["LOWEST_20D"]
+
+    def add_todays_data(self, today: dict):
+        new_row = self.df.iloc[-1].copy()
+        new_row["index"] = new_row['index'] + 1
+        new_row["DATE"] = datetime.now()
+        new_row["LTP"] = today["lastPrice"]
+        new_row["OPEN"] = today["open"]
+        new_row["HIGH"]= today["intraDayHighLow"]["max"]
+        new_row["LOW"]= today["intraDayHighLow"]["min"]
+        new_row['40D_HIGH'] = new_row['HIGH'] if new_row['HIGH'] > new_row['40D_HIGH'] else new_row['40D_HIGH']
+        new_row['LOWEST_20D'] = new_row['LOW'] if new_row['LOW'] < new_row['LOWEST_20D'] else new_row['LOWEST_20D']
+
+
+        self.df.loc[len(self.df) + 1] = new_row
+
+    def breakout(self, today: dict) -> bool:
+        self.preprocess()
+
+        if len(self.df) <= 0:
+            return False
+        
+        self.add_todays_data(today)
+        last_row = self.df.iloc[-1]
+        return last_row['HIGH'] >= last_row['40D_HIGH']

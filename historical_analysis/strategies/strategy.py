@@ -11,3 +11,7 @@ class Strategy(ABC):
   @abstractmethod
   def get_stop_loss(self) -> float:
     pass
+
+  @abstractmethod
+  def breakout(self, today: dict)->bool:
+    pass
