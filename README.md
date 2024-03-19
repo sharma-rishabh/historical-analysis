@@ -1,13 +1,9 @@
-# Prerequisite
+# Installation 
 
-- python3
-- poetry
+brew install pipx
 
-# Running
+pipx install "git+https://github.com/sharma-rishabh/invest-assist.git"
 
-1. poetry install
-
-2. poetry run python invest_assist command [--options]
 
 # Download name of all listed companies
 
