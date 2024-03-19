@@ -7,7 +7,7 @@
 
 1. poetry install
 
-2. poetry run python historical_analysis command [--options]
+2. poetry run python invest_assist command [--options]
 
 # Download name of all listed companies
 

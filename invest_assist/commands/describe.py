@@ -1,7 +1,7 @@
 import click
 from tabulate import tabulate
 
-from historical_analysis.models import Portfolio, Holding
+from models import Portfolio, Holding
 from .utils import validate_path, read_portfolio
 
 
