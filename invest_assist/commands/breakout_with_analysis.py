@@ -1,7 +1,7 @@
-import time
 import click
 import pandas as pd
-
+from io import StringIO
+from invest_assist.company_list import listings
 from invest_assist.analyzer import Analyzer
 from .utils import get_breakout, read_portfolio, strategy_class, validate_path
 from .historical_analysis import print_analysis_result
@@ -43,9 +43,11 @@ def breakout_with_analysis(
     Get a list of all the companies that broke out today for a particular strategy along with their historical-analysis.
     """
 
-    df = pd.read_csv("company_list.csv")
+    df = pd.read_csv(StringIO(listings))
+
     if all:
         n = len(df)
+
     symbols = df.head(n)["Symbol"].tolist()
 
     click.secho("Filtering breakouts: ", bold=True)

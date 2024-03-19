@@ -1,6 +1,9 @@
 import click
 import pandas as pd
+from io import StringIO
 from .utils import get_breakout
+from invest_assist.company_list import listings
+
 
 
 @click.command()
@@ -27,7 +30,8 @@ def breakout(strategy_name: str,all:bool, n:int):
     Get a list of all the companies that broke out today for a particular strategy.
     """
     
-    df = pd.read_csv("company_list.csv")
+    df = pd.read_csv(StringIO(listings))
+    
     if all:
         n = len(df)
     symbols = df.head(n)["Symbol"].tolist()
