@@ -8,6 +8,7 @@ from .describe import describe
 from .add_capital import add_capital
 from .breakout import breakout
 from .breakout_with_analysis  import breakout_with_analysis
+from .list_portfolios import list_portfolios
 
 
 @click.group()
@@ -24,3 +25,4 @@ stock.add_command(describe)
 stock.add_command(add_capital)
 stock.add_command(breakout)
 stock.add_command(breakout_with_analysis)
+stock.add_command(list_portfolios)
