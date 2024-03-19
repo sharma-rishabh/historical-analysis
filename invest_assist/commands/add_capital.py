@@ -17,6 +17,11 @@ from .utils import read_portfolio, write_portfolio, validate_path
     help="To update the capital for the portfolio.",
 )
 def add_capital(portfolio: click.types.Path, amount: float):
+
+    """
+    Add capital to a portfolio. -ve values can be passed to withdraw money.
+    """
+
     parsed_pf = read_portfolio(portfolio)
     new_capital = parsed_pf.update_capital(amount)
     write_portfolio(portfolio, parsed_pf)

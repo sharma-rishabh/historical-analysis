@@ -73,6 +73,11 @@ def get_holding(holding: Holding):
     help="Portfolio for which you want to buy this stock.",
 )
 def describe(portfolio: click.types.Path):
+
+    """
+    Show a table describing the value and holdings of a portfolio.
+    """
+    
     parsed_pf = read_portfolio(portfolio)
     click.clear()
     

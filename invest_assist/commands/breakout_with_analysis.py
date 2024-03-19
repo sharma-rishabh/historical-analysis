@@ -38,6 +38,11 @@ from .historical_analysis import print_analysis_result
 def breakout_with_analysis(
     strategy_name: str, all: bool, n: int, portfolio: click.types.File, years: int
 ):
+    
+    """
+    Get a list of all the companies that broke out today for a particular strategy along with their historical-analysis.
+    """
+
     df = pd.read_csv("company_list.csv")
     if all:
         n = len(df)

@@ -1,6 +1,6 @@
 import click
 import pandas as pd
-from .utils import strategy_class, get_breakout
+from .utils import get_breakout
 
 
 @click.command()
@@ -23,6 +23,10 @@ from .utils import strategy_class, get_breakout
     help="Top n companies you want to check for.",
 )
 def breakout(strategy_name: str,all:bool, n:int):
+    """
+    Get a list of all the companies that broke out today for a particular strategy.
+    """
+    
     df = pd.read_csv("company_list.csv")
     if all:
         n = len(df)
