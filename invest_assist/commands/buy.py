@@ -12,11 +12,12 @@ from invest_assist.models import Holding
 from invest_assist.analyzer import Analyzer
 
 
-def print_buying_result(holding: Holding):
+def print_buying_result(holding: Holding, info_only: bool):
     has_bought = holding.units > 0
     bg_color = "green" if has_bought else "red"
+    append = "You could buy" if info_only else "Bought"
     text = (
-        f"Bought {holding.units} units of {holding.symbol} for Rs {round(holding.units * holding.buying_price, 2)}"
+        f"{append} {holding.units} units of {holding.symbol} for Rs {round(holding.units * holding.buying_price, 2)}"
         if has_bought
         else f"Couldn't buy {holding.symbol}"
     )
@@ -97,4 +98,5 @@ def buy(
 
     if not info_only:
         write_portfolio(portfolio, parsed_pf)
-    print_buying_result(holding)
+
+    print_buying_result(holding, info_only)

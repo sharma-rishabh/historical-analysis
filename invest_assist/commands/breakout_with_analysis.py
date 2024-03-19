@@ -1,10 +1,31 @@
 import click
 import pandas as pd
 from io import StringIO
+from datetime import date
 from invest_assist.company_list import listings
 from invest_assist.analyzer import Analyzer
-from .utils import get_breakout, read_portfolio, strategy_class, validate_path
+from invest_assist.models import Portfolio
+from .utils import get_breakout, get_current_price, get_stop_loss, read_portfolio, strategy_class, validate_path
 from .historical_analysis import print_analysis_result
+from .buy import print_buying_result
+
+def get_buying_data(portfolio: Portfolio, symbol:str, strategy_name: str):
+    current_price = get_current_price(symbol)
+    strategy = strategy_class[strategy_name]["class"]
+    historical_analysis_result = Analyzer(symbol, portfolio, strategy, 3650).analyse()
+    stop_loss = get_stop_loss(symbol, strategy_name)
+
+    return portfolio.buy_stock(
+        symbol,
+        current_price,
+        current_price,
+        stop_loss,
+        1,
+        strategy_name,
+        date.today(),
+        historical_analysis_result,
+    )
+
 
 @click.command()
 @click.option(
@@ -63,6 +84,14 @@ def breakout_with_analysis(
                    for symbol in breaks]
 
         results.sort(key=lambda x: x.returns, reverse=True)
-    
-    for result,symbol in zip(results,breakouts):
+
+        
+
+    for result, symbol in zip(results, breakouts):
         print_analysis_result(symbol, strategy_name, result)
+        holding = get_buying_data(
+            parsed_pf,
+            symbol,
+            strategy_name
+        )
+        print_buying_result(holding, True)
