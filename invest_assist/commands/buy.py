@@ -8,8 +8,8 @@ from .utils import (
     strategy_class,
 )
 from datetime import datetime, date
-from models import Holding
-from analyzer import Analyzer
+from invest_assist.models import Holding
+from invest_assist.analyzer import Analyzer
 
 
 def print_buying_result(holding: Holding):

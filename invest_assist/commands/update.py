@@ -1,6 +1,6 @@
 import click
 
-from models.portfolio import Holding
+from invest_assist.models.portfolio import Holding
 from .utils import validate_path, read_portfolio, get_stop_loss, write_portfolio, get_current_price
 
 

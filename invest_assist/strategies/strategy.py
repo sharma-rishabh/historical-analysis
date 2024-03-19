@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from typing import List
-from trade import Trade
+from invest_assist.trade import Trade
 
 
 class Strategy(ABC):

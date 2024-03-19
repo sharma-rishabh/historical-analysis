@@ -1,3 +1,4 @@
-from commands import stock
+from invest_assist.commands import stock
 
-stock()
+def main():
+  stock()

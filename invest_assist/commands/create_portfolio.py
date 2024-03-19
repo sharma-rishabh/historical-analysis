@@ -1,6 +1,6 @@
 import click
 from .utils import  validate_path, write_portfolio
-from models import Portfolio
+from invest_assist.models import Portfolio
 
 @click.command()
 @click.option(

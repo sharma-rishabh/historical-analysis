@@ -1,5 +1,5 @@
 import pandas as pd
-from trade import Trade
+from invest_assist.trade import Trade
 from typing import List
 from .strategy import Strategy
 from datetime import datetime

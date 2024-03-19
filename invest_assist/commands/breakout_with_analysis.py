@@ -2,7 +2,7 @@ import time
 import click
 import pandas as pd
 
-from analyzer import Analyzer
+from invest_assist.analyzer import Analyzer
 from .utils import get_breakout, read_portfolio, strategy_class, validate_path
 from .historical_analysis import print_analysis_result
 

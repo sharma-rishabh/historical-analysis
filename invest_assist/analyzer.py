@@ -2,12 +2,12 @@ import pandas as pd
 import math
 from typing import List, Type
 from jugaad_data.nse import stock_df
-from trade import Trade
+from invest_assist.trade import Trade
 from datetime import timedelta, date
-from trade_analysis import TradeAnalysis
+from invest_assist.trade_analysis import TradeAnalysis
 from functools import reduce
-from models import Portfolio, HistoricalAnalysisResult
-from strategies import Strategy
+from invest_assist.models import Portfolio, HistoricalAnalysisResult
+from invest_assist.strategies import Strategy
 
 class Analyzer:
     def __init__(self, symbol: str, portfolio: Portfolio, strategy: Type[Strategy], days: int) -> None:

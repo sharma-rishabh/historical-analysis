@@ -1,7 +1,7 @@
 import click
 from tabulate import tabulate
 
-from models import Portfolio, Holding
+from invest_assist.models import Portfolio, Holding
 from .utils import validate_path, read_portfolio
 
 

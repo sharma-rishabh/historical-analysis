@@ -1,8 +1,8 @@
 import click
 
 from .utils import strategy_class, validate_path, read_portfolio
-from models.portfolio import Portfolio, HistoricalAnalysisResult
-from analyzer import Analyzer
+from invest_assist.models.portfolio import Portfolio, HistoricalAnalysisResult
+from invest_assist.analyzer import Analyzer
 
 
 def print_analysis_result(

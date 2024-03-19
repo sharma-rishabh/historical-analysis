@@ -4,8 +4,8 @@ import pandas as pd
 from typing import Dict
 from datetime import date, timedelta
 from jugaad_data.nse import stock_df, NSELive
-from models import Portfolio
-from strategies.forty_twenty import FortyTwenty
+from invest_assist.models import Portfolio
+from invest_assist.strategies.forty_twenty import FortyTwenty
 
 
 strategy_class: Dict[str, Dict] = {
