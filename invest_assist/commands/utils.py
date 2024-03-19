@@ -52,7 +52,7 @@ def validate_path(ctx, param, value):
     if value is None:
         return None
 
-    prefix = "/Users/rishabh/workspace/python/projects/historical_analysis"
+    prefix = os.getenv("PORTFOLIO_HOME")
     return os.path.join(prefix, f"{value}.json")
 
 def read_portfolio(path: Path) -> Portfolio:
