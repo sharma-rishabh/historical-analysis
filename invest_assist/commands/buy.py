@@ -16,10 +16,11 @@ def print_buying_result(holding: Holding, info_only: bool):
     has_bought = holding.units > 0
     bg_color = "green" if has_bought else "red"
     append = "You could buy" if info_only else "Bought"
+    append_couldnt = "Cannot buy" if info_only else "Couldn't buy" 
     text = (
         f"{append} {holding.units} units of {holding.symbol} for Rs {round(holding.units * holding.buying_price, 2)}"
         if has_bought
-        else f"Couldn't buy {holding.symbol}"
+        else f"{append_couldnt} {holding.symbol}, Price : {holding.buying_price}"
     )
     click.secho(text, bg=bg_color, fg="bright_white")
 
