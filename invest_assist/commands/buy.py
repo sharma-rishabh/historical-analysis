@@ -20,7 +20,7 @@ def print_buying_result(holding: Holding, info_only: bool):
     text = (
         f"{append} {holding.units} units of {holding.symbol} for Rs {round(holding.units * holding.buying_price, 2)}"
         if has_bought
-        else f"{append_couldnt} {holding.symbol}, Price : {holding.buying_price}"
+        else f"{append_couldnt} {holding.symbol}, Price: {holding.buying_price}, Risk per unit: {round(holding.buying_price - holding.stop_loss)}"
     )
     click.secho(text, bg=bg_color, fg="bright_white")
 

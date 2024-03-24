@@ -5,11 +5,12 @@ from typing import Dict
 from datetime import date, timedelta
 from jugaad_data.nse import stock_df, NSELive
 from invest_assist.models import Portfolio
-from invest_assist.strategies.forty_twenty import FortyTwenty
+from invest_assist.strategies import FortyTwenty, MovingAverage
 
 
 strategy_class: Dict[str, Dict] = {
     "FortyTwenty": {"class": FortyTwenty, "min_days_required": 100},
+    "MovingAverage": {"class": MovingAverage, "min_days_required": 100},
 }
 
 
