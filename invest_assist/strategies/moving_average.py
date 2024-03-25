@@ -99,7 +99,11 @@ class MovingAverage(Strategy):
 
         self.add_todays_data(today)
         last_row = self.df.iloc[-1]
+        second_last_row = self.df.iloc[-2]
 
+        if self.can_buy(second_last_row):
+            return False
+        
         return self.can_buy(last_row)
 
     def get_stop_loss(self) -> float:
