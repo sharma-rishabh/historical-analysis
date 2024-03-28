@@ -157,6 +157,7 @@ class Holding(BaseModel):
 
 
 class HistoricalAnalysisResult(BaseModel):
+    symbol:str = ""
     returns: float
     days_per_return: int
     total_trades: int

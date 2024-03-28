@@ -83,15 +83,15 @@ def breakout_with_analysis(
         results = [Analyzer(symbol, parsed_pf, strategy, 365 * years).analyse()
                    for symbol in breaks]
 
-        results.sort(key=lambda x: x.returns, reverse=True)
+        results.sort(key=lambda x: x.returns)
 
         
 
-    for result, symbol in zip(results, breakouts):
-        print_analysis_result(symbol, strategy_name, result)
+    for result in results:
+        print_analysis_result(result.symbol, strategy_name, result)
         holding = get_buying_data(
             parsed_pf,
-            symbol,
+            result.symbol,
             strategy_name
         )
         print_buying_result(holding, True)

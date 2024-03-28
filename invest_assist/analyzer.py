@@ -89,6 +89,7 @@ class Analyzer:
         profit_percent = round(len(profitable_trades) / len(trade_analysis), 2)
 
         return HistoricalAnalysisResult(
+            symbol=self.symbol,
             returns=avg_rate_of_return,
             days_per_return=avg_days,
             winning_percentage=profit_percent,
