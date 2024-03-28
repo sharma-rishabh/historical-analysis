@@ -93,6 +93,7 @@ class Portfolio(BaseModel):
         strategy: str,
         buying_date: date,
         hd: "HistoricalAnalysisResult",
+        info_only: bool = False
     ) -> "Holding":
         available_investment = self.remaining_capital() * buying_capacity
         units = self.get_units(available_investment, buying_price, stop_loss)
@@ -110,7 +111,7 @@ class Portfolio(BaseModel):
             historical_data=hd,
             risk=risk,
         )
-        if units <= 0:
+        if units <= 0 or info_only:
             return holding
 
         holding.id = self.get_next_id()

@@ -20,10 +20,11 @@ def get_buying_data(portfolio: Portfolio, symbol:str, strategy_name: str):
         current_price,
         current_price,
         stop_loss,
-        1,
+        1.0,
         strategy_name,
         date.today(),
         historical_analysis_result,
+        True
     )
 
 

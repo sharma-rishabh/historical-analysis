@@ -95,6 +95,7 @@ def buy(
         strategy_name,
         buy_date,
         historical_analysis_result,
+        info_only
     )
 
     if not info_only:
