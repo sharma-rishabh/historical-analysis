@@ -18,7 +18,7 @@ def print_buying_result(holding: Holding, info_only: bool):
     append = "You could buy" if info_only else "Bought"
     append_couldnt = "Cannot buy" if info_only else "Couldn't buy" 
     text = (
-        f"{append} {holding.units} units of {holding.symbol} for Rs {round(holding.units * holding.buying_price, 2)}"
+        f"{append} {holding.units} units of {holding.symbol} for Rs {round(holding.units * holding.buying_price, 2)}, Stop-loss {holding.stop_loss}"
         if has_bought
         else f"{append_couldnt} {holding.symbol}, Price: {holding.buying_price}, Risk per unit: {round(holding.buying_price - holding.stop_loss)}"
     )
