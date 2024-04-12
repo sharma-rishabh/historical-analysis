@@ -3,6 +3,12 @@ import math
 from typing import List
 from datetime import date
 from pydantic import BaseModel
+from scipy.optimize import newton
+from itertools import chain
+
+
+def flatten_array(arr):
+    return list(chain.from_iterable(arr))
 
 
 class Portfolio(BaseModel):
@@ -71,6 +77,34 @@ class Portfolio(BaseModel):
         total_returns = (self.current_value() + self.remaining_capital()) - self.capital
         return total_returns / self.capital
 
+    def cash_flows(self) -> list:
+        def get_cashflow(holding: Holding) -> tuple:
+            if holding.sold:
+                return [
+                    (-(holding.buying_price * holding.units), holding.buying_date),
+                    (holding.selling_price * holding.units, holding.selling_date),
+                ]
+            return [
+                (-(holding.buying_price * holding.units), holding.buying_date),
+                (holding.current_price * holding.units, date.today()),
+            ]
+
+        cashflows=[get_cashflow(holding) for holding in self.holdings]
+
+        return flatten_array(cashflows)
+
+    def xirr(self) -> float:
+        def xnpv(rate, cashflows):
+            chron_order = sorted(cashflows, key=lambda x: x[1])
+            t0 = chron_order[0][1]
+            return sum([cf / (1 + rate) ** ((t - t0).days / 365.0) for (cf, t) in chron_order])
+
+        try:
+            xirr = newton(lambda r: xnpv(r, self.cash_flows()), 0.1)
+            return round(xirr * 100,2)
+        except:
+            return 0
+
     def get_units(self, investment_amount, buying_price, stop_loss) -> int:
         risk_per_unit = buying_price - stop_loss
         risk_amount = self.capital * self.risk_percent
@@ -132,6 +166,7 @@ class Holding(BaseModel):
     historical_data: "HistoricalAnalysisResult"
     selling_price: float | None = None
     risk: float
+    selling_date: date = date.today()
 
     def update_stop_loss(self, new_stop_loss: float) -> bool:
         is_stop_loss_changed = self.stop_loss != new_stop_loss
@@ -145,6 +180,7 @@ class Holding(BaseModel):
     def sell(self, selling_price: float | None) -> float:
         self.selling_price = selling_price if selling_price else self.stop_loss
         self.sold = True
+        self.selling_date=date.today()
         return self.selling_price
 
     def returns_on_risk(self) -> float:

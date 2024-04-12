@@ -16,6 +16,10 @@ def get_returns(returns: float) -> str:
     color = "bright_green" if is_in_profit else "bright_red"
     return click.style(f"{round(returns * 100, 2)}", fg=color, bold=True)
 
+def get_xirr(xirr: float) -> str:
+    is_in_profit = xirr > 0
+    color = "bright_green" if is_in_profit else "bright_red"
+    return click.style(f"{xirr}", fg=color, bold=True)
 
 def print_summary(portfolio: Portfolio):
     current_value_header = click.style("Current Value", bold=True)
@@ -30,8 +34,20 @@ def print_summary(portfolio: Portfolio):
     remaining_capital_header = click.style("Remaining Capital", bold=True)
     remaining_capital = click.style(f"{portfolio.remaining_capital()}", bold=True)
 
+    xirr_header=click.style("XIRR", bold=True)
+    xirr=get_xirr(portfolio.xirr())
+
     data = [
-        [current_value_header, current_value, "", returns_header, returns],
+        [
+            current_value_header,
+            current_value,
+            "",
+            returns_header,
+            returns,
+            "",
+            xirr_header,
+            xirr,
+        ],
         [invested_header, invested, "", remaining_capital_header, remaining_capital],
     ]
 
