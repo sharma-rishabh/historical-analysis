@@ -17,6 +17,10 @@ class Portfolio(BaseModel):
     risk_percent: float
     holdings: List["Holding"]
 
+    def update_risk(self, new_risk: float) -> float:
+        self.risk_percent = new_risk
+        return self.risk_percent
+
     def update_capital(self, amount: float) -> float:
         self.capital += amount
         return self.capital
@@ -89,7 +93,7 @@ class Portfolio(BaseModel):
                 (holding.current_price * holding.units, date.today()),
             ]
 
-        cashflows=[get_cashflow(holding) for holding in self.holdings]
+        cashflows = [get_cashflow(holding) for holding in self.holdings]
 
         return flatten_array(cashflows)
 
@@ -97,11 +101,13 @@ class Portfolio(BaseModel):
         def xnpv(rate, cashflows):
             chron_order = sorted(cashflows, key=lambda x: x[1])
             t0 = chron_order[0][1]
-            return sum([cf / (1 + rate) ** ((t - t0).days / 365.0) for (cf, t) in chron_order])
+            return sum(
+                [cf / (1 + rate) ** ((t - t0).days / 365.0) for (cf, t) in chron_order]
+            )
 
         try:
             xirr = newton(lambda r: xnpv(r, self.cash_flows()), 0.1)
-            return round(xirr * 100,2)
+            return round(xirr * 100, 2)
         except:
             return 0
 
@@ -127,7 +133,7 @@ class Portfolio(BaseModel):
         strategy: str,
         buying_date: date,
         hd: "HistoricalAnalysisResult",
-        info_only: bool = False
+        info_only: bool = False,
     ) -> "Holding":
         available_investment = self.remaining_capital() * buying_capacity
         units = self.get_units(available_investment, buying_price, stop_loss)
@@ -180,7 +186,7 @@ class Holding(BaseModel):
     def sell(self, selling_price: float | None) -> float:
         self.selling_price = selling_price if selling_price else self.stop_loss
         self.sold = True
-        self.selling_date=date.today()
+        self.selling_date = date.today()
         return self.selling_price
 
     def returns_on_risk(self) -> float:
@@ -194,7 +200,7 @@ class Holding(BaseModel):
 
 
 class HistoricalAnalysisResult(BaseModel):
-    symbol:str = ""
+    symbol: str = ""
     returns: float
     days_per_return: int
     total_trades: int
