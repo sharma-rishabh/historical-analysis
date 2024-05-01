@@ -36,7 +36,7 @@ class Portfolio(BaseModel):
         returns = 0
         for holding in holdings_to_sell:
             sold_for = holding.sell(selling_price)
-            returns += holding.final_returns()
+            returns += holding.returns()
 
         self.update_capital(returns)
         return sold_for
@@ -44,7 +44,7 @@ class Portfolio(BaseModel):
     def sell_by_id(self, id: int, selling_price: float | None) -> float:
         holding_to_sell = self.find_by_id(id)
         final_selling_price = holding_to_sell.sell(selling_price)
-        self.update_capital(holding_to_sell.final_returns())
+        self.update_capital(holding_to_sell.returns())
         return final_selling_price
 
     def sell_holdings(
@@ -116,8 +116,10 @@ class Portfolio(BaseModel):
         risk_amount = self.capital * self.risk_percent
         units_as_per_risk = math.floor(risk_amount / risk_per_unit)
         total_cost = units_as_per_risk * buying_price
+
         if total_cost <= investment_amount:
             return units_as_per_risk
+        
         return math.floor(investment_amount / buying_price)
 
     def get_risk(self, units: int, buying_price: float, stop_loss: float) -> float:
@@ -183,7 +185,7 @@ class Holding(BaseModel):
         self.current_price = new_price
         return True
 
-    def sell(self, selling_price: float | None) -> float:
+    def sell(self, selling_price: float | None = None) -> float:
         self.selling_price = selling_price if selling_price else self.stop_loss
         self.sold = True
         self.selling_date = date.today()
@@ -193,10 +195,10 @@ class Holding(BaseModel):
         return self.returns() / self.risk
 
     def returns(self) -> float:
+        if self.sold:
+            return (self.selling_price - self.buying_price) * self.units
+        
         return (self.current_price - self.buying_price) * self.units
-
-    def final_returns(self) -> float:
-        return (self.selling_price - self.buying_price) * self.units
 
 
 class HistoricalAnalysisResult(BaseModel):
