@@ -34,9 +34,7 @@ class FortyTwenty(Strategy):
         current_trade = None
 
         for _, row in self.df.iterrows():
-
             if current_trade is None and self.can_buy(row):
-
                 current_trade = Trade(
                     buy_price=row["LTP"],
                     start_date=row["DATE"],
@@ -68,15 +66,22 @@ class FortyTwenty(Strategy):
 
     def add_todays_data(self, today: dict):
         new_row = self.df.iloc[-1].copy()
-        new_row["index"] = new_row['index'] + 1
+        new_row["index"] = new_row["index"] + 1
         new_row["DATE"] = datetime.now()
         new_row["LTP"] = today["lastPrice"]
         new_row["OPEN"] = today["open"]
-        new_row["HIGH"]= today["intraDayHighLow"]["max"]
-        new_row["LOW"]= today["intraDayHighLow"]["min"]
-        new_row['40D_HIGH'] = new_row['HIGH'] if new_row['HIGH'] > new_row['40D_HIGH'] else new_row['40D_HIGH']
-        new_row['LOWEST_20D'] = new_row['LOW'] if new_row['LOW'] < new_row['LOWEST_20D'] else new_row['LOWEST_20D']
-
+        new_row["HIGH"] = today["intraDayHighLow"]["max"]
+        new_row["LOW"] = today["intraDayHighLow"]["min"]
+        new_row["40D_HIGH"] = (
+            new_row["HIGH"]
+            if new_row["HIGH"] > new_row["40D_HIGH"]
+            else new_row["40D_HIGH"]
+        )
+        new_row["LOWEST_20D"] = (
+            new_row["LOW"]
+            if new_row["LOW"] < new_row["LOWEST_20D"]
+            else new_row["LOWEST_20D"]
+        )
 
         self.df.loc[len(self.df) + 1] = new_row
 
@@ -85,7 +90,7 @@ class FortyTwenty(Strategy):
 
         if len(self.df) <= 0:
             return False
-        
+
         self.add_todays_data(today)
         last_row = self.df.iloc[-1]
-        return last_row['HIGH'] >= last_row['40D_HIGH']
+        return last_row["HIGH"] >= last_row["40D_HIGH"]
