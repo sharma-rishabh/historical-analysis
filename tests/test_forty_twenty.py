@@ -1,17 +1,9 @@
+import unittest
 import pytest
 import pandas as pd
 from datetime import date
 from invest_assist.strategies import FortyTwenty
 from invest_assist.trade import Trade
-
-
-columns = [
-    "DATE",
-    "LTP",
-    "HIGH",
-    "LOW",
-    "OPEN",
-]
 
 
 @pytest.fixture()
@@ -36,6 +28,13 @@ def data():
 
 @pytest.fixture()
 def df(data):
+    columns = [
+        "DATE",
+        "LTP",
+        "HIGH",
+        "LOW",
+        "OPEN",
+    ]
     return pd.DataFrame(data, columns=columns)
 
 
@@ -89,7 +88,7 @@ class TestFortyTwenty:
 
         expected = [trade1, trade2]
         actual = forty_twenty.execute()
-        
+
         assert actual == expected
 
     def test_get_stop_loss(self, forty_twenty: FortyTwenty):
@@ -99,36 +98,26 @@ class TestFortyTwenty:
         today = {
             "lastPrice": 150,
             "open": 150,
-            "intraDayHighLow": {
-                "max": 161,
-                "min": 140
-            }
+            "intraDayHighLow": {"max": 161, "min": 140},
         }
 
         assert forty_twenty.breakout(today) == True
-    
+
     def test_breakout_empty_df(self, df: pd.DataFrame):
         today = {
             "lastPrice": 150,
             "open": 150,
-            "intraDayHighLow": {
-                "max": 161,
-                "min": 140
-            }
+            "intraDayHighLow": {"max": 161, "min": 140},
         }
-        
+
         forty_twenty = FortyTwenty(df[:39])
         assert forty_twenty.breakout(today) == False
-    
+
     def test_breakout_false(self, forty_twenty: FortyTwenty):
         today = {
             "lastPrice": 150,
             "open": 150,
-            "intraDayHighLow": {
-                "max": 159,
-                "min": 140
-            }
+            "intraDayHighLow": {"max": 159, "min": 140},
         }
-        
 
         assert forty_twenty.breakout(today) == False

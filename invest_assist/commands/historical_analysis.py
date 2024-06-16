@@ -1,7 +1,7 @@
 import click
-
+from jugaad_data.nse import stock_df
 from .utils import strategy_class, validate_path, read_portfolio
-from invest_assist.models.portfolio import Portfolio, HistoricalAnalysisResult
+from invest_assist.models.portfolio import HistoricalAnalysisResult
 from invest_assist.analyzer import Analyzer
 
 
@@ -14,9 +14,7 @@ def print_analysis_result(
     trade_color = "green" if are_enough_trades else "red"
     white = "bright_white"
 
-    returns = click.style(
-        f" {historical_results.returns} ", bg=return_color, fg=white
-    )
+    returns = click.style(f" {historical_results.returns} ", bg=return_color, fg=white)
 
     days = click.style(f"{historical_results.days_per_return}", bold=True)
 
@@ -66,16 +64,16 @@ def historical_analysis(
     symbols = symbols.split(",")
 
     parsed_pf = read_portfolio(portfolio)
-    
+
     parsed_strategies = [
         strategy_class[name]["class"] for name in strategies.split(",")
     ]
 
     for symbol in symbols:
-        
+
         results = [
-            Analyzer(symbol, parsed_pf, strategy, 365*years).analyse()
-              for strategy in parsed_strategies
+            Analyzer(symbol, parsed_pf, strategy, 365 * years, stock_df).analyse()
+            for strategy in parsed_strategies
         ]
 
         [

@@ -2,6 +2,7 @@ import click
 import pandas as pd
 from io import StringIO
 from datetime import date
+from jugaad_data.nse import stock_df
 from invest_assist.company_list import listings
 from invest_assist.analyzer import Analyzer
 from invest_assist.models import Portfolio
@@ -12,7 +13,7 @@ from .buy import print_buying_result
 def get_buying_data(portfolio: Portfolio, symbol:str, strategy_name: str):
     current_price = get_current_price(symbol)
     strategy = strategy_class[strategy_name]["class"]
-    historical_analysis_result = Analyzer(symbol, portfolio, strategy, 3650).analyse()
+    historical_analysis_result = Analyzer(symbol, portfolio, strategy, 3650, stock_df).analyse()
     stop_loss = get_stop_loss(symbol, strategy_name)
 
     return portfolio.buy_stock(

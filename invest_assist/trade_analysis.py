@@ -18,4 +18,16 @@ class TradeAnalysis:
         self.units = units 
         self.overall_returns = overall_returns
 
+  def __eq__(self, value: object) -> bool:
+      if not isinstance(value, TradeAnalysis):
+          return False
+      return (
+          self.buying_price == value.buying_price and
+          self.selling_price == value.selling_price and
+          self.risk == value.risk and
+          self.return_on_risk == value.return_on_risk and
+          self.days == value.days and
+          self.units == value.units and
+          self.overall_returns == value.overall_returns
+      )
     

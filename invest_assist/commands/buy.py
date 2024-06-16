@@ -7,6 +7,7 @@ from .utils import (
     write_portfolio,
     strategy_class,
 )
+from jugaad_data.nse import stock_df
 from datetime import datetime, date
 from invest_assist.models import Holding
 from invest_assist.analyzer import Analyzer
@@ -84,7 +85,7 @@ def buy(
     stop_loss = get_stop_loss(symbol, strategy_name)
     parsed_pf = read_portfolio(portfolio)
 
-    historical_analysis_result = Analyzer(symbol, parsed_pf, strategy, 3650).analyse()
+    historical_analysis_result = Analyzer(symbol, parsed_pf, strategy, 3650, stock_df).analyse()
 
     holding = parsed_pf.buy_stock(
         symbol,

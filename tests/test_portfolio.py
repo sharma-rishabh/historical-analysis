@@ -1,3 +1,5 @@
+import unittest
+from unittest.mock import patch
 import pytest
 from datetime import date
 from invest_assist.models.portfolio import HistoricalAnalysisResult, Holding, Portfolio
@@ -15,7 +17,7 @@ def historical_analysis_result():
 
 
 @pytest.fixture()
-def holding(historical_analysis_result):
+def holding(historical_analysis_result: HistoricalAnalysisResult):
     return Holding(
         id=1,
         symbol="RELIANCE",
@@ -32,7 +34,7 @@ def holding(historical_analysis_result):
 
 
 @pytest.fixture()
-def holding_id_2(historical_analysis_result):
+def holding_id_2(historical_analysis_result: HistoricalAnalysisResult):
     return Holding(
         id=2,
         symbol="GCPOWER",
@@ -175,10 +177,12 @@ class TestPortfolio:
     def test_cash_flows(self, portfolio: Portfolio, holding_id_2: Holding):
         portfolio.holdings.append(holding_id_2)
         portfolio.sell_holdings(1, None, None)
+        portfolio.sell_holdings(2, None, 250.0)
 
         portfolio.holdings[0].selling_date = date(2024, 8, 1)
         portfolio.holdings[1].buying_date = date(2024, 4, 1)
-
+        portfolio.holdings[1].selling_date = date(2024, 5, 1)
+        print(portfolio.holdings)
         expected = [
             (-1320.0, date(2024, 5, 1)),
             (1200.0, date(2024, 8, 1)),
@@ -191,9 +195,11 @@ class TestPortfolio:
     def test_xirr(self, portfolio: Portfolio, holding_id_2: Holding):
         portfolio.holdings.append(holding_id_2)
         portfolio.sell_holdings(1, None, None)
+        portfolio.sell_holdings(2, None, 250.0)
 
         portfolio.holdings[0].selling_date = date(2024, 8, 1)
         portfolio.holdings[1].buying_date = date(2024, 4, 1)
+        portfolio.holdings[1].selling_date = date(2024, 5, 1)
 
         assert portfolio.xirr() == 138.07
 
@@ -231,7 +237,7 @@ class TestPortfolio:
             strategy="FortyTwenty",
             buying_date=date(2024, 5, 1),
             hd=historical_analysis_result,
-            info_only=False
+            info_only=False,
         )
 
         assert actual == expected
@@ -261,11 +267,11 @@ class TestPortfolio:
             strategy="FortyTwenty",
             buying_date=date(2024, 5, 1),
             hd=historical_analysis_result,
-            info_only=True
+            info_only=True,
         )
 
         assert actual == expected
-    
+
     def test_buy_stock(
         self, portfolio: Portfolio, historical_analysis_result: HistoricalAnalysisResult
     ):
@@ -292,7 +298,7 @@ class TestPortfolio:
             strategy="FortyTwenty",
             buying_date=date(2024, 5, 1),
             hd=historical_analysis_result,
-            info_only=False
+            info_only=False,
         )
 
         assert actual == expected
