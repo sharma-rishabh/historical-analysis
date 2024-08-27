@@ -68,6 +68,11 @@ def get_holding(holding: Holding):
         str(round(holding.returns_on_risk(), 2)), bold=True, fg=return_color
     )
 
+    is_profitable_currently = holding.stop_loss > holding.buying_price
+
+    stop_loss_color = "bright_green" if is_profitable_currently else "bright_red"
+    stop_loss = click.style(str(holding.stop_loss), bold=True, fg=stop_loss_color)
+
     return [
         holding.id,
         click.style(holding.symbol, bold=True),
@@ -76,7 +81,8 @@ def get_holding(holding: Holding):
         current_price,
         holding.risk,
         return_on_risk,
-        holding.stop_loss,
+        stop_loss,
+        holding.buying_price,
     ]
 
 
@@ -110,6 +116,7 @@ def describe(portfolio: click.types.Path):
         "Risk",
         "RoR",
         "Stop Loss",
+        "Buy Price",
     ]
 
     data = [get_holding(holding) for holding in parsed_pf.active_stocks()]
