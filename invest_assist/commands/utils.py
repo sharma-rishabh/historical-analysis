@@ -6,10 +6,14 @@ from datetime import date, timedelta
 from jugaad_data.nse import stock_df, NSELive
 from invest_assist.models import Portfolio
 from invest_assist.strategies import FortyTwenty, MovingAverage
+from invest_assist.strategies.ThirtyThirtyThree import ThirtyThirtyThree
+from invest_assist.strategies.ThirtyTwentyNine import ThirtyTwentyNine
 
 
 strategy_class: Dict[str, Dict] = {
     "FortyTwenty": {"class": FortyTwenty, "min_days_required": 100},
+    "ThirtyTwentyNine": {"class": ThirtyTwentyNine, "min_days_required": 100},
+    "ThirtyThirtyThree": {"class": ThirtyThirtyThree, "min_days_required": 100},
     "MovingAverage": {"class": MovingAverage, "min_days_required": 100},
 }
 

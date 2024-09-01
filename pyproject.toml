@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "invest-assist"
-version = "0.2.2"
+version = "0.3.2"
 description = ""
 authors = ["Rishabh Sharma <99526730+sharma-rishabh@users.noreply.github.com >"]
 

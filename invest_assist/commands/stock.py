@@ -10,6 +10,7 @@ from .breakout import breakout
 from .breakout_with_analysis import breakout_with_analysis
 from .list_portfolios import list_portfolios
 from .update_risk import update_risk
+from .find_high_low import find_high_low
 
 
 @click.group()
@@ -28,3 +29,4 @@ stock.add_command(breakout)
 stock.add_command(breakout_with_analysis)
 stock.add_command(list_portfolios)
 stock.add_command(update_risk)
+stock.add_command(find_high_low)

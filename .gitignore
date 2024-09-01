@@ -3,3 +3,7 @@
 .venv/
 portfolio.json
 data.json
+high_low_analysis.csv
+high_low_combinations copy.json
+high_low_combinations.json
+output.txt
