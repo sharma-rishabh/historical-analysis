@@ -174,35 +174,6 @@ class TestPortfolio:
     def test_return_percent(self, portfolio: Portfolio):
         assert round(portfolio.return_percent(), 3) == 0.013
 
-    def test_cash_flows(self, portfolio: Portfolio, holding_id_2: Holding):
-        portfolio.holdings.append(holding_id_2)
-        portfolio.sell_holdings(1, None, None)
-        portfolio.sell_holdings(2, None, 250.0)
-
-        portfolio.holdings[0].selling_date = date(2024, 8, 1)
-        portfolio.holdings[1].buying_date = date(2024, 4, 1)
-        portfolio.holdings[1].selling_date = date(2024, 5, 1)
-        print(portfolio.holdings)
-        expected = [
-            (-1320.0, date(2024, 5, 1)),
-            (1200.0, date(2024, 8, 1)),
-            (-600.0, date(2024, 4, 1)),
-            (1000.0, date(2024, 5, 1)),
-        ]
-
-        assert portfolio.cash_flows() == expected
-
-    def test_xirr(self, portfolio: Portfolio, holding_id_2: Holding):
-        portfolio.holdings.append(holding_id_2)
-        portfolio.sell_holdings(1, None, None)
-        portfolio.sell_holdings(2, None, 250.0)
-
-        portfolio.holdings[0].selling_date = date(2024, 8, 1)
-        portfolio.holdings[1].buying_date = date(2024, 4, 1)
-        portfolio.holdings[1].selling_date = date(2024, 5, 1)
-
-        assert portfolio.xirr() == 138.07
-
     def test_get_units_cost_greater_than_investment(self, portfolio: Portfolio):
         assert portfolio.get_units(1200, 250, 200) == 4
 

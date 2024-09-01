@@ -28,7 +28,7 @@ def create_portfolio(
     """
     Create a new portfolio.
     """
-    portfolio = Portfolio(capital=capital, risk_percent=risk_percent, holdings=[])
+    portfolio = Portfolio(capital=capital, risk_percent=risk_percent, holdings=[], cash_input= capital)
 
     write_portfolio(portfolio_name, portfolio)
     click.secho(f"Portfolio was created.", bold=True)

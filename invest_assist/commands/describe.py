@@ -16,10 +16,6 @@ def get_returns(returns: float) -> str:
     color = "bright_green" if is_in_profit else "bright_red"
     return click.style(f"{round(returns * 100, 2)}", fg=color, bold=True)
 
-def get_xirr(xirr: float) -> str:
-    is_in_profit = xirr > 0
-    color = "bright_green" if is_in_profit else "bright_red"
-    return click.style(f"{xirr}", fg=color, bold=True)
 
 def print_summary(portfolio: Portfolio):
     current_value_header = click.style("Current Value", bold=True)
@@ -34,8 +30,11 @@ def print_summary(portfolio: Portfolio):
     remaining_capital_header = click.style("Remaining Capital", bold=True)
     remaining_capital = click.style(f"{portfolio.remaining_capital()}", bold=True)
 
-    xirr_header=click.style("XIRR", bold=True)
-    xirr=get_xirr(portfolio.xirr())
+    cash_input_header = click.style("Cash Input", bold=True)
+    cash_input = click.style(f"{portfolio.cash_input}", bold=True)
+
+    overall_returns_header = click.style("Overall Returns", bold=True)
+    overall_returns = get_returns(portfolio.overall_returns())
 
     data = [
         [
@@ -45,10 +44,19 @@ def print_summary(portfolio: Portfolio):
             returns_header,
             returns,
             "",
-            xirr_header,
-            xirr,
+            overall_returns_header,
+            overall_returns,
         ],
-        [invested_header, invested, "", remaining_capital_header, remaining_capital],
+        [
+            invested_header,
+            invested,
+            "",
+            remaining_capital_header,
+            remaining_capital,
+            "",
+            cash_input_header,
+            cash_input,
+        ],
     ]
 
     table = tabulate(data, tablefmt="grid", numalign="right")
@@ -95,14 +103,13 @@ def get_holding(holding: Holding):
     help="Portfolio for which you want to buy this stock.",
 )
 def describe(portfolio: click.types.Path):
-
     """
     Show a table describing the value and holdings of a portfolio.
     """
-    
+
     parsed_pf = read_portfolio(portfolio)
     click.clear()
-    
+
     click.secho("\n\nSUMMARY", bold=True)
     print_summary(parsed_pf)
 

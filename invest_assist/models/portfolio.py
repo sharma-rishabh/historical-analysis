@@ -15,6 +15,7 @@ class Portfolio(BaseModel):
     current_id: int = 0
     capital: float
     risk_percent: float
+    cash_input: float = 0
     holdings: List["Holding"]
 
     def update_risk(self, new_risk: float) -> float:
@@ -23,6 +24,7 @@ class Portfolio(BaseModel):
 
     def update_capital(self, amount: float) -> float:
         self.capital += amount
+        self.cash_input += amount
         return self.capital
 
     def find_by_id(self, id: int) -> "Holding":
@@ -81,35 +83,10 @@ class Portfolio(BaseModel):
         total_returns = (self.current_value() + self.remaining_capital()) - self.capital
         return total_returns / self.capital
 
-    def cash_flows(self) -> list:
-        def get_cashflow(holding: Holding) -> tuple:
-            if holding.sold:
-                return [
-                    (-(holding.buying_price * holding.units), holding.buying_date),
-                    (holding.selling_price * holding.units, holding.selling_date),
-                ]
-            return [
-                (-(holding.buying_price * holding.units), holding.buying_date),
-                (holding.current_price * holding.units, date.today()),
-            ]
-
-        cashflows = [get_cashflow(holding) for holding in self.holdings]
-
-        return flatten_array(cashflows)
-
-    def xirr(self) -> float:
-        def xnpv(rate, cashflows):
-            chron_order = sorted(cashflows, key=lambda x: x[1])
-            t0 = chron_order[0][1]
-            return sum(
-                [cf / (1 + rate) ** ((t - t0).days / 365.0) for (cf, t) in chron_order]
-            )
-
-        try:
-            xirr = newton(lambda r: xnpv(r, self.cash_flows()), 0.1)
-            return round(xirr * 100, 2)
-        except:
-            return 0
+    def overall_returns(self) -> float:
+        overall_returns = self.current_value() + self.remaining_capital() - self.cash_input
+        return overall_returns / self.cash_input
+    
 
     def get_units(self, investment_amount, buying_price, stop_loss) -> int:
         risk_per_unit = buying_price - stop_loss
@@ -119,7 +96,7 @@ class Portfolio(BaseModel):
 
         if total_cost <= investment_amount:
             return units_as_per_risk
-        
+
         return math.floor(investment_amount / buying_price)
 
     def get_risk(self, units: int, buying_price: float, stop_loss: float) -> float:
@@ -197,7 +174,7 @@ class Holding(BaseModel):
     def returns(self) -> float:
         if self.sold:
             return (self.selling_price - self.buying_price) * self.units
-        
+
         return (self.current_price - self.buying_price) * self.units
 
 
