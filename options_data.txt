@@ -1,0 +1,1917 @@
+
+{
+    "ASHOKLEY": {
+        "total_trades": 80,
+        "breakout": 10,
+        "change": 0.07,
+        "days": 18
+    },
+    "AUROPHARMA": {
+        "total_trades": 108,
+        "breakout": 2,
+        "change": 0.07,
+        "days": 19
+    },
+    "CANFINHOME": {
+        "total_trades": 107,
+        "breakout": 2,
+        "change": 0.07,
+        "days": 19
+    },
+    "CHOLAFIN": {
+        "total_trades": 105,
+        "breakout": 3,
+        "change": 0.07,
+        "days": 20
+    },
+    "DABUR": {
+        "total_trades": 91,
+        "breakout": 6,
+        "change": 0.05,
+        "days": 17
+    },
+    "DIXON": {
+        "total_trades": 59,
+        "breakout": 5,
+        "change": 0.08,
+        "days": 19
+    },
+    "FEDERALBNK": {
+        "total_trades": 106,
+        "breakout": 2,
+        "change": 0.07,
+        "days": 19
+    },
+    "HDFCAMC": {
+        "total_trades": 58,
+        "breakout": 3,
+        "change": 0.05,
+        "days": 19
+    },
+    "HDFCBANK": {
+        "total_trades": 87,
+        "breakout": 7,
+        "change": 0.04,
+        "days": 21
+    },
+    "IDEA": {
+        "total_trades": 77,
+        "breakout": 16,
+        "change": 0.08,
+        "days": 15
+    },
+    "IDFC": {
+        "total_trades": 88,
+        "breakout": 7,
+        "change": 0.08,
+        "days": 16
+    },
+    "JKCEMENT": {
+        "total_trades": 90,
+        "breakout": 6,
+        "change": 0.08,
+        "days": 18
+    },
+    "JUBLFOOD": {
+        "total_trades": 93,
+        "breakout": 6,
+        "change": 0.07,
+        "days": 17
+    },
+    "MARICO": {
+        "total_trades": 79,
+        "breakout": 11,
+        "change": 0.06,
+        "days": 17
+    },
+    "OFSS": {
+        "total_trades": 72,
+        "breakout": 11,
+        "change": 0.05,
+        "days": 15
+    },
+    "PEL": {
+        "total_trades": 98,
+        "breakout": 4,
+        "change": 0.07,
+        "days": 15
+    },
+    "RECLTD": {
+        "total_trades": 107,
+        "breakout": 2,
+        "change": 0.06,
+        "days": 17
+    },
+    "VOLTAS": {
+        "total_trades": 107,
+        "breakout": 2,
+        "change": 0.06,
+        "days": 18
+    },
+    "ZYDUSLIFE": {
+        "total_trades": 102,
+        "breakout": 3,
+        "change": 0.06,
+        "days": 16
+    }
+}
+{
+    "ASHOKLEY": {
+        "total_trades": 80,
+        "breakout": 10,
+        "change": -0.08,
+        "days": 14
+    },
+    "AUROPHARMA": {
+        "total_trades": 108,
+        "breakout": 2,
+        "change": -0.07,
+        "days": 14
+    },
+    "CANFINHOME": {
+        "total_trades": 107,
+        "breakout": 2,
+        "change": -0.08,
+        "days": 16
+    },
+    "CHOLAFIN": {
+        "total_trades": 105,
+        "breakout": 3,
+        "change": -0.07,
+        "days": 14
+    },
+    "DABUR": {
+        "total_trades": 91,
+        "breakout": 6,
+        "change": -0.05,
+        "days": 14
+    },
+    "DIXON": {
+        "total_trades": 59,
+        "breakout": 5,
+        "change": -0.08,
+        "days": 12
+    },
+    "FEDERALBNK": {
+        "total_trades": 106,
+        "breakout": 2,
+        "change": -0.08,
+        "days": 15
+    },
+    "HDFCAMC": {
+        "total_trades": 58,
+        "breakout": 3,
+        "change": -0.07,
+        "days": 15
+    },
+    "HDFCBANK": {
+        "total_trades": 87,
+        "breakout": 7,
+        "change": -0.04,
+        "days": 13
+    },
+    "IDEA": {
+        "total_trades": 77,
+        "breakout": 16,
+        "change": -0.12,
+        "days": 17
+    },
+    "IDFC": {
+        "total_trades": 88,
+        "breakout": 7,
+        "change": -0.08,
+        "days": 17
+    },
+    "JKCEMENT": {
+        "total_trades": 90,
+        "breakout": 6,
+        "change": -0.06,
+        "days": 14
+    },
+    "JUBLFOOD": {
+        "total_trades": 93,
+        "breakout": 6,
+        "change": -0.08,
+        "days": 14
+    },
+    "MARICO": {
+        "total_trades": 79,
+        "breakout": 11,
+        "change": -0.04,
+        "days": 12
+    },
+    "OFSS": {
+        "total_trades": 72,
+        "breakout": 11,
+        "change": -0.07,
+        "days": 15
+    },
+    "PEL": {
+        "total_trades": 98,
+        "breakout": 4,
+        "change": -0.09,
+        "days": 14
+    },
+    "RECLTD": {
+        "total_trades": 107,
+        "breakout": 2,
+        "change": -0.09,
+        "days": 15
+    },
+    "VOLTAS": {
+        "total_trades": 107,
+        "breakout": 2,
+        "change": -0.07,
+        "days": 14
+    },
+    "ZYDUSLIFE": {
+        "total_trades": 102,
+        "breakout": 3,
+        "change": -0.06,
+        "days": 16
+    }
+}
+{
+    "ABBOTINDIA": {
+        "total_trades": 35,
+        "breakout": 100,
+        "change": 0.09,
+        "days": 21
+    },
+    "ABFRL": {
+        "total_trades": 108,
+        "breakout": 2,
+        "change": 0.07,
+        "days": 16
+    },
+    "ACC": {
+        "total_trades": 108,
+        "breakout": 2,
+        "change": 0.05,
+        "days": 18
+    },
+    "ADANIPORTS": {
+        "total_trades": 106,
+        "breakout": 3,
+        "change": 0.07,
+        "days": 19
+    },
+    "ALKEM": {
+        "total_trades": 28,
+        "breakout": 100,
+        "change": 0.06,
+        "days": 18
+    },
+    "AMBUJACEM": {
+        "total_trades": 109,
+        "breakout": 2,
+        "change": 0.05,
+        "days": 19
+    },
+    "APOLLOHOSP": {
+        "total_trades": 39,
+        "breakout": 100,
+        "change": 0.04,
+        "days": 15
+    },
+    "ASIANPAINT": {
+        "total_trades": 105,
+        "breakout": 3,
+        "change": 0.05,
+        "days": 20
+    },
+    "ATUL": {
+        "total_trades": 106,
+        "breakout": 3,
+        "change": 0.06,
+        "days": 18
+    },
+    "AUBANK": {
+        "total_trades": 30,
+        "breakout": 44,
+        "change": 0.06,
+        "days": 21
+    },
+    "AUROPHARMA": {
+        "total_trades": 34,
+        "breakout": 100,
+        "change": 0.08,
+        "days": 21
+    },
+    "AXISBANK": {
+        "total_trades": 105,
+        "breakout": 3,
+        "change": 0.06,
+        "days": 20
+    },
+    "BAJAJ-AUTO": {
+        "total_trades": 38,
+        "breakout": 100,
+        "change": 0.05,
+        "days": 20
+    },
+    "BAJAJFINSV": {
+        "total_trades": 45,
+        "breakout": 100,
+        "change": 0.05,
+        "days": 18
+    },
+    "BAJFINANCE": {
+        "total_trades": 62,
+        "breakout": 38,
+        "change": 0.07,
+        "days": 22
+    },
+    "BALKRISIND": {
+        "total_trades": 101,
+        "breakout": 5,
+        "change": 0.07,
+        "days": 18
+    },
+    "BALRAMCHIN": {
+        "total_trades": 39,
+        "breakout": 100,
+        "change": 0.06,
+        "days": 17
+    },
+    "BANDHANBNK": {
+        "total_trades": 64,
+        "breakout": 2,
+        "change": 0.07,
+        "days": 17
+    },
+    "BANKBARODA": {
+        "total_trades": 93,
+        "breakout": 5,
+        "change": 0.07,
+        "days": 17
+    },
+    "BEL": {
+        "total_trades": 109,
+        "breakout": 2,
+        "change": 0.07,
+        "days": 18
+    },
+    "BERGEPAINT": {
+        "total_trades": 109,
+        "breakout": 2,
+        "change": 0.06,
+        "days": 20
+    },
+    "BHARATFORG": {
+        "total_trades": 111,
+        "breakout": 2,
+        "change": 0.05,
+        "days": 19
+    },
+    "BHARTIARTL": {
+        "total_trades": 36,
+        "breakout": 100,
+        "change": 0.05,
+        "days": 18
+    },
+    "BOSCHLTD": {
+        "total_trades": 107,
+        "breakout": 2,
+        "change": 0.04,
+        "days": 18
+    },
+    "BPCL": {
+        "total_trades": 43,
+        "breakout": 48,
+        "change": 0.05,
+        "days": 14
+    },
+    "BRITANNIA": {
+        "total_trades": 78,
+        "breakout": 16,
+        "change": 0.05,
+        "days": 18
+    },
+    "BSOFT": {
+        "total_trades": 68,
+        "breakout": 21,
+        "change": 0.08,
+        "days": 18
+    },
+    "CANBK": {
+        "total_trades": 103,
+        "breakout": 4,
+        "change": 0.07,
+        "days": 17
+    },
+    "CHAMBLFERT": {
+        "total_trades": 96,
+        "breakout": 6,
+        "change": 0.08,
+        "days": 17
+    },
+    "CIPLA": {
+        "total_trades": 35,
+        "breakout": 100,
+        "change": 0.04,
+        "days": 16
+    },
+    "COALINDIA": {
+        "total_trades": 104,
+        "breakout": 3,
+        "change": 0.05,
+        "days": 17
+    },
+    "COFORGE": {
+        "total_trades": 68,
+        "breakout": 22,
+        "change": 0.09,
+        "days": 19
+    },
+    "COLPAL": {
+        "total_trades": 36,
+        "breakout": 100,
+        "change": 0.04,
+        "days": 17
+    },
+    "CONCOR": {
+        "total_trades": 108,
+        "breakout": 2,
+        "change": 0.05,
+        "days": 18
+    },
+    "COROMANDEL": {
+        "total_trades": 98,
+        "breakout": 5,
+        "change": 0.05,
+        "days": 17
+    },
+    "CROMPTON": {
+        "total_trades": 25,
+        "breakout": 100,
+        "change": 0.08,
+        "days": 14
+    },
+    "CUB": {
+        "total_trades": 65,
+        "breakout": 20,
+        "change": 0.05,
+        "days": 17
+    },
+    "CUMMINSIND": {
+        "total_trades": 110,
+        "breakout": 2,
+        "change": 0.05,
+        "days": 18
+    },
+    "DALBHARAT": {
+        "total_trades": 29,
+        "breakout": 28,
+        "change": 0.07,
+        "days": 18
+    },
+    "DIVISLAB": {
+        "total_trades": 43,
+        "breakout": 100,
+        "change": 0.04,
+        "days": 19
+    },
+    "DIXON": {
+        "total_trades": 63,
+        "breakout": 4,
+        "change": 0.1,
+        "days": 18
+    },
+    "DLF": {
+        "total_trades": 103,
+        "breakout": 3,
+        "change": 0.08,
+        "days": 19
+    },
+    "DRREDDY": {
+        "total_trades": 108,
+        "breakout": 2,
+        "change": 0.04,
+        "days": 18
+    },
+    "ESCORTS": {
+        "total_trades": 108,
+        "breakout": 2,
+        "change": 0.07,
+        "days": 19
+    },
+    "EXIDEIND": {
+        "total_trades": 109,
+        "breakout": 2,
+        "change": 0.06,
+        "days": 20
+    },
+    "FEDERALBNK": {
+        "total_trades": 106,
+        "breakout": 3,
+        "change": 0.06,
+        "days": 18
+    },
+    "GAIL": {
+        "total_trades": 91,
+        "breakout": 8,
+        "change": 0.05,
+        "days": 16
+    },
+    "GLENMARK": {
+        "total_trades": 31,
+        "breakout": 100,
+        "change": 0.06,
+        "days": 19
+    },
+    "GMRINFRA": {
+        "total_trades": 110,
+        "breakout": 2,
+        "change": 0.07,
+        "days": 17
+    },
+    "GNFC": {
+        "total_trades": 105,
+        "breakout": 3,
+        "change": 0.07,
+        "days": 17
+    },
+    "GODREJCP": {
+        "total_trades": 109,
+        "breakout": 2,
+        "change": 0.05,
+        "days": 17
+    },
+    "GODREJPROP": {
+        "total_trades": 104,
+        "breakout": 3,
+        "change": 0.08,
+        "days": 18
+    },
+    "GRANULES": {
+        "total_trades": 39,
+        "breakout": 100,
+        "change": 0.06,
+        "days": 18
+    },
+    "GUJGASLTD": {
+        "total_trades": 64,
+        "breakout": 12,
+        "change": 0.07,
+        "days": 16
+    },
+    "HAL": {
+        "total_trades": 63,
+        "breakout": 2,
+        "change": 0.09,
+        "days": 19
+    },
+    "HAVELLS": {
+        "total_trades": 104,
+        "breakout": 3,
+        "change": 0.06,
+        "days": 20
+    },
+    "HCLTECH": {
+        "total_trades": 29,
+        "breakout": 100,
+        "change": 0.03,
+        "days": 16
+    },
+    "HDFCBANK": {
+        "total_trades": 83,
+        "breakout": 13,
+        "change": 0.04,
+        "days": 18
+    },
+    "HEROMOTOCO": {
+        "total_trades": 65,
+        "breakout": 21,
+        "change": 0.04,
+        "days": 17
+    },
+    "HINDALCO": {
+        "total_trades": 109,
+        "breakout": 2,
+        "change": 0.06,
+        "days": 19
+    },
+    "HINDCOPPER": {
+        "total_trades": 103,
+        "breakout": 3,
+        "change": 0.07,
+        "days": 16
+    },
+    "HINDPETRO": {
+        "total_trades": 43,
+        "breakout": 48,
+        "change": 0.05,
+        "days": 18
+    },
+    "HINDUNILVR": {
+        "total_trades": 104,
+        "breakout": 3,
+        "change": 0.04,
+        "days": 19
+    },
+    "ICICIBANK": {
+        "total_trades": 69,
+        "breakout": 22,
+        "change": 0.04,
+        "days": 17
+    },
+    "ICICIGI": {
+        "total_trades": 21,
+        "breakout": 100,
+        "change": 0.05,
+        "days": 18
+    },
+    "ICICIPRULI": {
+        "total_trades": 23,
+        "breakout": 100,
+        "change": 0.06,
+        "days": 21
+    },
+    "IDFC": {
+        "total_trades": 95,
+        "breakout": 5,
+        "change": 0.07,
+        "days": 18
+    },
+    "IDFCFIRSTB": {
+        "total_trades": 86,
+        "breakout": 2,
+        "change": 0.06,
+        "days": 16
+    },
+    "IEX": {
+        "total_trades": 19,
+        "breakout": 100,
+        "change": 0.07,
+        "days": 14
+    },
+    "IGL": {
+        "total_trades": 42,
+        "breakout": 100,
+        "change": 0.06,
+        "days": 16
+    },
+    "INDIAMART": {
+        "total_trades": 51,
+        "breakout": 2,
+        "change": 0.09,
+        "days": 18
+    },
+    "INDUSINDBK": {
+        "total_trades": 71,
+        "breakout": 20,
+        "change": 0.05,
+        "days": 19
+    },
+    "INDUSTOWER": {
+        "total_trades": 30,
+        "breakout": 100,
+        "change": 0.08,
+        "days": 14
+    },
+    "IOC": {
+        "total_trades": 69,
+        "breakout": 19,
+        "change": 0.05,
+        "days": 16
+    },
+    "IRCTC": {
+        "total_trades": 30,
+        "breakout": 18,
+        "change": 0.08,
+        "days": 20
+    },
+    "ITC": {
+        "total_trades": 89,
+        "breakout": 9,
+        "change": 0.04,
+        "days": 16
+    },
+    "JINDALSTEL": {
+        "total_trades": 102,
+        "breakout": 3,
+        "change": 0.09,
+        "days": 19
+    },
+    "JKCEMENT": {
+        "total_trades": 109,
+        "breakout": 2,
+        "change": 0.07,
+        "days": 18
+    },
+    "JSWSTEEL": {
+        "total_trades": 105,
+        "breakout": 3,
+        "change": 0.06,
+        "days": 20
+    },
+    "JUBLFOOD": {
+        "total_trades": 109,
+        "breakout": 2,
+        "change": 0.06,
+        "days": 18
+    },
+    "LALPATHLAB": {
+        "total_trades": 28,
+        "breakout": 100,
+        "change": 0.05,
+        "days": 15
+    },
+    "LAURUSLABS": {
+        "total_trades": 32,
+        "breakout": 32,
+        "change": 0.07,
+        "days": 17
+    },
+    "LICHSGFIN": {
+        "total_trades": 110,
+        "breakout": 2,
+        "change": 0.05,
+        "days": 18
+    },
+    "LT": {
+        "total_trades": 69,
+        "breakout": 19,
+        "change": 0.07,
+        "days": 19
+    },
+    "LTF": {
+        "total_trades": 109,
+        "breakout": 2,
+        "change": 0.06,
+        "days": 18
+    },
+    "LTIM": {
+        "total_trades": 82,
+        "breakout": 2,
+        "change": 0.05,
+        "days": 21
+    },
+    "LUPIN": {
+        "total_trades": 34,
+        "breakout": 100,
+        "change": 0.06,
+        "days": 17
+    },
+    "M&M": {
+        "total_trades": 109,
+        "breakout": 2,
+        "change": 0.05,
+        "days": 19
+    },
+    "M&MFIN": {
+        "total_trades": 109,
+        "breakout": 2,
+        "change": 0.06,
+        "days": 17
+    },
+    "MANAPPURAM": {
+        "total_trades": 64,
+        "breakout": 28,
+        "change": 0.09,
+        "days": 17
+    },
+    "MARUTI": {
+        "total_trades": 71,
+        "breakout": 19,
+        "change": 0.05,
+        "days": 20
+    },
+    "MCX": {
+        "total_trades": 29,
+        "breakout": 100,
+        "change": 0.07,
+        "days": 17
+    },
+    "METROPOLIS": {
+        "total_trades": 40,
+        "breakout": 9,
+        "change": 0.1,
+        "days": 20
+    },
+    "MFSL": {
+        "total_trades": 106,
+        "breakout": 3,
+        "change": 0.06,
+        "days": 17
+    },
+    "MGL": {
+        "total_trades": 71,
+        "breakout": 6,
+        "change": 0.05,
+        "days": 18
+    },
+    "MPHASIS": {
+        "total_trades": 108,
+        "breakout": 2,
+        "change": 0.06,
+        "days": 17
+    },
+    "MUTHOOTFIN": {
+        "total_trades": 104,
+        "breakout": 3,
+        "change": 0.06,
+        "days": 19
+    },
+    "NATIONALUM": {
+        "total_trades": 108,
+        "breakout": 2,
+        "change": 0.07,
+        "days": 18
+    },
+    "NAUKRI": {
+        "total_trades": 34,
+        "breakout": 100,
+        "change": 0.1,
+        "days": 19
+    },
+    "NAVINFLUOR": {
+        "total_trades": 105,
+        "breakout": 3,
+        "change": 0.07,
+        "days": 18
+    },
+    "NTPC": {
+        "total_trades": 69,
+        "breakout": 16,
+        "change": 0.05,
+        "days": 17
+    },
+    "OBEROIRLTY": {
+        "total_trades": 82,
+        "breakout": 12,
+        "change": 0.08,
+        "days": 17
+    },
+    "OFSS": {
+        "total_trades": 94,
+        "breakout": 6,
+        "change": 0.05,
+        "days": 17
+    },
+    "ONGC": {
+        "total_trades": 84,
+        "breakout": 8,
+        "change": 0.06,
+        "days": 18
+    },
+    "PAGEIND": {
+        "total_trades": 67,
+        "breakout": 19,
+        "change": 0.06,
+        "days": 18
+    },
+    "PERSISTENT": {
+        "total_trades": 32,
+        "breakout": 100,
+        "change": 0.1,
+        "days": 19
+    },
+    "PETRONET": {
+        "total_trades": 106,
+        "breakout": 3,
+        "change": 0.05,
+        "days": 18
+    },
+    "PFC": {
+        "total_trades": 67,
+        "breakout": 21,
+        "change": 0.05,
+        "days": 14
+    },
+    "PIDILITIND": {
+        "total_trades": 98,
+        "breakout": 6,
+        "change": 0.05,
+        "days": 21
+    },
+    "PNB": {
+        "total_trades": 95,
+        "breakout": 5,
+        "change": 0.07,
+        "days": 17
+    },
+    "POLYCAB": {
+        "total_trades": 49,
+        "breakout": 6,
+        "change": 0.08,
+        "days": 19
+    },
+    "POWERGRID": {
+        "total_trades": 106,
+        "breakout": 3,
+        "change": 0.04,
+        "days": 19
+    },
+    "PVRINOX": {
+        "total_trades": 109,
+        "breakout": 2,
+        "change": 0.05,
+        "days": 18
+    },
+    "RAMCOCEM": {
+        "total_trades": 65,
+        "breakout": 19,
+        "change": 0.07,
+        "days": 18
+    },
+    "RBLBANK": {
+        "total_trades": 79,
+        "breakout": 2,
+        "change": 0.06,
+        "days": 18
+    },
+    "RELIANCE": {
+        "total_trades": 60,
+        "breakout": 28,
+        "change": 0.04,
+        "days": 18
+    },
+    "SAIL": {
+        "total_trades": 108,
+        "breakout": 2,
+        "change": 0.06,
+        "days": 17
+    },
+    "SBILIFE": {
+        "total_trades": 23,
+        "breakout": 100,
+        "change": 0.03,
+        "days": 12
+    },
+    "SBIN": {
+        "total_trades": 101,
+        "breakout": 4,
+        "change": 0.06,
+        "days": 19
+    },
+    "SHREECEM": {
+        "total_trades": 74,
+        "breakout": 16,
+        "change": 0.06,
+        "days": 18
+    },
+    "SRF": {
+        "total_trades": 84,
+        "breakout": 14,
+        "change": 0.07,
+        "days": 21
+    },
+    "SUNPHARMA": {
+        "total_trades": 32,
+        "breakout": 100,
+        "change": 0.05,
+        "days": 19
+    },
+    "SUNTV": {
+        "total_trades": 76,
+        "breakout": 13,
+        "change": 0.06,
+        "days": 18
+    },
+    "SYNGENE": {
+        "total_trades": 23,
+        "breakout": 100,
+        "change": 0.09,
+        "days": 16
+    },
+    "TATACHEM": {
+        "total_trades": 109,
+        "breakout": 2,
+        "change": 0.06,
+        "days": 18
+    },
+    "TATACOMM": {
+        "total_trades": 69,
+        "breakout": 19,
+        "change": 0.06,
+        "days": 16
+    },
+    "TATAPOWER": {
+        "total_trades": 70,
+        "breakout": 16,
+        "change": 0.06,
+        "days": 17
+    },
+    "TATASTEEL": {
+        "total_trades": 105,
+        "breakout": 3,
+        "change": 0.07,
+        "days": 19
+    },
+    "TCS": {
+        "total_trades": 37,
+        "breakout": 100,
+        "change": 0.02,
+        "days": 14
+    },
+    "TECHM": {
+        "total_trades": 109,
+        "breakout": 2,
+        "change": 0.05,
+        "days": 19
+    },
+    "TITAN": {
+        "total_trades": 104,
+        "breakout": 3,
+        "change": 0.05,
+        "days": 20
+    },
+    "TORNTPHARM": {
+        "total_trades": 41,
+        "breakout": 100,
+        "change": 0.06,
+        "days": 18
+    },
+    "TVSMOTOR": {
+        "total_trades": 42,
+        "breakout": 100,
+        "change": 0.09,
+        "days": 21
+    },
+    "UBL": {
+        "total_trades": 63,
+        "breakout": 23,
+        "change": 0.05,
+        "days": 16
+    },
+    "ULTRACEMCO": {
+        "total_trades": 105,
+        "breakout": 3,
+        "change": 0.05,
+        "days": 19
+    },
+    "UNITDSPR": {
+        "total_trades": 32,
+        "breakout": 100,
+        "change": 0.04,
+        "days": 16
+    },
+    "UPL": {
+        "total_trades": 33,
+        "breakout": 100,
+        "change": 0.04,
+        "days": 17
+    },
+    "VEDL": {
+        "total_trades": 48,
+        "breakout": 36,
+        "change": 0.06,
+        "days": 19
+    },
+    "WIPRO": {
+        "total_trades": 57,
+        "breakout": 28,
+        "change": 0.04,
+        "days": 17
+    },
+    "ZYDUSLIFE": {
+        "total_trades": 96,
+        "breakout": 5,
+        "change": 0.06,
+        "days": 18
+    }
+}
+{
+    "ABBOTINDIA": {
+        "total_trades": 35,
+        "breakout": 100,
+        "change": -0.05,
+        "days": 12
+    },
+    "ABFRL": {
+        "total_trades": 108,
+        "breakout": 2,
+        "change": -0.08,
+        "days": 15
+    },
+    "ACC": {
+        "total_trades": 108,
+        "breakout": 2,
+        "change": -0.06,
+        "days": 14
+    },
+    "ADANIPORTS": {
+        "total_trades": 106,
+        "breakout": 3,
+        "change": -0.07,
+        "days": 14
+    },
+    "ALKEM": {
+        "total_trades": 28,
+        "breakout": 100,
+        "change": -0.06,
+        "days": 11
+    },
+    "AMBUJACEM": {
+        "total_trades": 109,
+        "breakout": 2,
+        "change": -0.07,
+        "days": 18
+    },
+    "APOLLOHOSP": {
+        "total_trades": 39,
+        "breakout": 100,
+        "change": -0.08,
+        "days": 18
+    },
+    "ASIANPAINT": {
+        "total_trades": 105,
+        "breakout": 3,
+        "change": -0.05,
+        "days": 15
+    },
+    "ATUL": {
+        "total_trades": 106,
+        "breakout": 3,
+        "change": -0.06,
+        "days": 13
+    },
+    "AUBANK": {
+        "total_trades": 30,
+        "breakout": 44,
+        "change": -0.08,
+        "days": 14
+    },
+    "AUROPHARMA": {
+        "total_trades": 34,
+        "breakout": 100,
+        "change": -0.09,
+        "days": 13
+    },
+    "AXISBANK": {
+        "total_trades": 105,
+        "breakout": 3,
+        "change": -0.06,
+        "days": 15
+    },
+    "BAJAJ-AUTO": {
+        "total_trades": 38,
+        "breakout": 100,
+        "change": -0.05,
+        "days": 12
+    },
+    "BAJAJFINSV": {
+        "total_trades": 45,
+        "breakout": 100,
+        "change": -0.06,
+        "days": 11
+    },
+    "BAJFINANCE": {
+        "total_trades": 62,
+        "breakout": 38,
+        "change": -0.07,
+        "days": 13
+    },
+    "BALKRISIND": {
+        "total_trades": 101,
+        "breakout": 5,
+        "change": -0.07,
+        "days": 13
+    },
+    "BALRAMCHIN": {
+        "total_trades": 39,
+        "breakout": 100,
+        "change": -0.1,
+        "days": 9
+    },
+    "BANDHANBNK": {
+        "total_trades": 64,
+        "breakout": 2,
+        "change": -0.12,
+        "days": 17
+    },
+    "BANKBARODA": {
+        "total_trades": 93,
+        "breakout": 5,
+        "change": -0.08,
+        "days": 14
+    },
+    "BEL": {
+        "total_trades": 109,
+        "breakout": 2,
+        "change": -0.09,
+        "days": 15
+    },
+    "BERGEPAINT": {
+        "total_trades": 109,
+        "breakout": 2,
+        "change": -0.05,
+        "days": 14
+    },
+    "BHARATFORG": {
+        "total_trades": 111,
+        "breakout": 2,
+        "change": -0.08,
+        "days": 14
+    },
+    "BHARTIARTL": {
+        "total_trades": 36,
+        "breakout": 100,
+        "change": -0.07,
+        "days": 9
+    },
+    "BOSCHLTD": {
+        "total_trades": 107,
+        "breakout": 2,
+        "change": -0.06,
+        "days": 15
+    },
+    "BPCL": {
+        "total_trades": 43,
+        "breakout": 48,
+        "change": -0.08,
+        "days": 16
+    },
+    "BRITANNIA": {
+        "total_trades": 78,
+        "breakout": 16,
+        "change": -0.05,
+        "days": 14
+    },
+    "BSOFT": {
+        "total_trades": 68,
+        "breakout": 21,
+        "change": -0.07,
+        "days": 13
+    },
+    "CANBK": {
+        "total_trades": 103,
+        "breakout": 4,
+        "change": -0.1,
+        "days": 15
+    },
+    "CHAMBLFERT": {
+        "total_trades": 96,
+        "breakout": 6,
+        "change": -0.08,
+        "days": 14
+    },
+    "CIPLA": {
+        "total_trades": 35,
+        "breakout": 100,
+        "change": -0.06,
+        "days": 11
+    },
+    "COALINDIA": {
+        "total_trades": 104,
+        "breakout": 3,
+        "change": -0.06,
+        "days": 16
+    },
+    "COFORGE": {
+        "total_trades": 68,
+        "breakout": 22,
+        "change": -0.07,
+        "days": 13
+    },
+    "COLPAL": {
+        "total_trades": 36,
+        "breakout": 100,
+        "change": -0.05,
+        "days": 11
+    },
+    "CONCOR": {
+        "total_trades": 108,
+        "breakout": 2,
+        "change": -0.08,
+        "days": 16
+    },
+    "COROMANDEL": {
+        "total_trades": 98,
+        "breakout": 5,
+        "change": -0.07,
+        "days": 14
+    },
+    "CROMPTON": {
+        "total_trades": 25,
+        "breakout": 100,
+        "change": -0.06,
+        "days": 13
+    },
+    "CUB": {
+        "total_trades": 65,
+        "breakout": 20,
+        "change": -0.06,
+        "days": 14
+    },
+    "CUMMINSIND": {
+        "total_trades": 110,
+        "breakout": 2,
+        "change": -0.07,
+        "days": 15
+    },
+    "DALBHARAT": {
+        "total_trades": 29,
+        "breakout": 28,
+        "change": -0.08,
+        "days": 15
+    },
+    "DIVISLAB": {
+        "total_trades": 43,
+        "breakout": 100,
+        "change": -0.07,
+        "days": 13
+    },
+    "DIXON": {
+        "total_trades": 63,
+        "breakout": 4,
+        "change": -0.08,
+        "days": 13
+    },
+    "DLF": {
+        "total_trades": 103,
+        "breakout": 3,
+        "change": -0.09,
+        "days": 14
+    },
+    "DRREDDY": {
+        "total_trades": 108,
+        "breakout": 2,
+        "change": -0.05,
+        "days": 15
+    },
+    "ESCORTS": {
+        "total_trades": 108,
+        "breakout": 2,
+        "change": -0.07,
+        "days": 14
+    },
+    "EXIDEIND": {
+        "total_trades": 109,
+        "breakout": 2,
+        "change": -0.06,
+        "days": 14
+    },
+    "FEDERALBNK": {
+        "total_trades": 106,
+        "breakout": 3,
+        "change": -0.08,
+        "days": 14
+    },
+    "GAIL": {
+        "total_trades": 91,
+        "breakout": 8,
+        "change": -0.08,
+        "days": 16
+    },
+    "GLENMARK": {
+        "total_trades": 31,
+        "breakout": 100,
+        "change": -0.07,
+        "days": 10
+    },
+    "GMRINFRA": {
+        "total_trades": 110,
+        "breakout": 2,
+        "change": -0.11,
+        "days": 15
+    },
+    "GNFC": {
+        "total_trades": 105,
+        "breakout": 3,
+        "change": -0.09,
+        "days": 14
+    },
+    "GODREJCP": {
+        "total_trades": 109,
+        "breakout": 2,
+        "change": -0.06,
+        "days": 14
+    },
+    "GODREJPROP": {
+        "total_trades": 104,
+        "breakout": 3,
+        "change": -0.08,
+        "days": 13
+    },
+    "GRANULES": {
+        "total_trades": 39,
+        "breakout": 100,
+        "change": -0.09,
+        "days": 11
+    },
+    "GUJGASLTD": {
+        "total_trades": 64,
+        "breakout": 12,
+        "change": -0.07,
+        "days": 14
+    },
+    "HAL": {
+        "total_trades": 63,
+        "breakout": 2,
+        "change": -0.07,
+        "days": 13
+    },
+    "HAVELLS": {
+        "total_trades": 104,
+        "breakout": 3,
+        "change": -0.06,
+        "days": 13
+    },
+    "HCLTECH": {
+        "total_trades": 29,
+        "breakout": 100,
+        "change": -0.07,
+        "days": 14
+    },
+    "HDFCBANK": {
+        "total_trades": 83,
+        "breakout": 13,
+        "change": -0.04,
+        "days": 12
+    },
+    "HEROMOTOCO": {
+        "total_trades": 65,
+        "breakout": 21,
+        "change": -0.06,
+        "days": 16
+    },
+    "HINDALCO": {
+        "total_trades": 109,
+        "breakout": 2,
+        "change": -0.08,
+        "days": 16
+    },
+    "HINDCOPPER": {
+        "total_trades": 103,
+        "breakout": 3,
+        "change": -0.12,
+        "days": 16
+    },
+    "HINDPETRO": {
+        "total_trades": 43,
+        "breakout": 48,
+        "change": -0.08,
+        "days": 12
+    },
+    "HINDUNILVR": {
+        "total_trades": 104,
+        "breakout": 3,
+        "change": -0.04,
+        "days": 16
+    },
+    "ICICIBANK": {
+        "total_trades": 69,
+        "breakout": 22,
+        "change": -0.07,
+        "days": 15
+    },
+    "ICICIGI": {
+        "total_trades": 21,
+        "breakout": 100,
+        "change": -0.05,
+        "days": 13
+    },
+    "ICICIPRULI": {
+        "total_trades": 23,
+        "breakout": 100,
+        "change": -0.06,
+        "days": 10
+    },
+    "IDFC": {
+        "total_trades": 95,
+        "breakout": 5,
+        "change": -0.09,
+        "days": 15
+    },
+    "IDFCFIRSTB": {
+        "total_trades": 86,
+        "breakout": 2,
+        "change": -0.09,
+        "days": 16
+    },
+    "IEX": {
+        "total_trades": 19,
+        "breakout": 100,
+        "change": -0.09,
+        "days": 14
+    },
+    "IGL": {
+        "total_trades": 42,
+        "breakout": 100,
+        "change": -0.06,
+        "days": 12
+    },
+    "INDIAMART": {
+        "total_trades": 51,
+        "breakout": 2,
+        "change": -0.08,
+        "days": 13
+    },
+    "INDUSINDBK": {
+        "total_trades": 71,
+        "breakout": 20,
+        "change": -0.07,
+        "days": 12
+    },
+    "INDUSTOWER": {
+        "total_trades": 30,
+        "breakout": 100,
+        "change": -0.1,
+        "days": 13
+    },
+    "IOC": {
+        "total_trades": 69,
+        "breakout": 19,
+        "change": -0.08,
+        "days": 13
+    },
+    "IRCTC": {
+        "total_trades": 30,
+        "breakout": 18,
+        "change": -0.06,
+        "days": 13
+    },
+    "ITC": {
+        "total_trades": 89,
+        "breakout": 9,
+        "change": -0.06,
+        "days": 17
+    },
+    "JINDALSTEL": {
+        "total_trades": 102,
+        "breakout": 3,
+        "change": -0.11,
+        "days": 14
+    },
+    "JKCEMENT": {
+        "total_trades": 109,
+        "breakout": 2,
+        "change": -0.06,
+        "days": 15
+    },
+    "JSWSTEEL": {
+        "total_trades": 105,
+        "breakout": 3,
+        "change": -0.08,
+        "days": 15
+    },
+    "JUBLFOOD": {
+        "total_trades": 109,
+        "breakout": 2,
+        "change": -0.08,
+        "days": 14
+    },
+    "LALPATHLAB": {
+        "total_trades": 28,
+        "breakout": 100,
+        "change": -0.08,
+        "days": 14
+    },
+    "LAURUSLABS": {
+        "total_trades": 32,
+        "breakout": 32,
+        "change": -0.09,
+        "days": 11
+    },
+    "LICHSGFIN": {
+        "total_trades": 110,
+        "breakout": 2,
+        "change": -0.08,
+        "days": 16
+    },
+    "LT": {
+        "total_trades": 69,
+        "breakout": 19,
+        "change": -0.06,
+        "days": 13
+    },
+    "LTF": {
+        "total_trades": 109,
+        "breakout": 2,
+        "change": -0.08,
+        "days": 15
+    },
+    "LTIM": {
+        "total_trades": 82,
+        "breakout": 2,
+        "change": -0.07,
+        "days": 13
+    },
+    "LUPIN": {
+        "total_trades": 34,
+        "breakout": 100,
+        "change": -0.06,
+        "days": 9
+    },
+    "M&M": {
+        "total_trades": 109,
+        "breakout": 2,
+        "change": -0.06,
+        "days": 15
+    },
+    "M&MFIN": {
+        "total_trades": 109,
+        "breakout": 2,
+        "change": -0.09,
+        "days": 16
+    },
+    "MANAPPURAM": {
+        "total_trades": 64,
+        "breakout": 28,
+        "change": -0.1,
+        "days": 13
+    },
+    "MARUTI": {
+        "total_trades": 71,
+        "breakout": 19,
+        "change": -0.04,
+        "days": 13
+    },
+    "MCX": {
+        "total_trades": 29,
+        "breakout": 100,
+        "change": -0.08,
+        "days": 13
+    },
+    "METROPOLIS": {
+        "total_trades": 40,
+        "breakout": 9,
+        "change": -0.07,
+        "days": 14
+    },
+    "MFSL": {
+        "total_trades": 106,
+        "breakout": 3,
+        "change": -0.08,
+        "days": 15
+    },
+    "MGL": {
+        "total_trades": 71,
+        "breakout": 6,
+        "change": -0.07,
+        "days": 14
+    },
+    "MPHASIS": {
+        "total_trades": 108,
+        "breakout": 2,
+        "change": -0.06,
+        "days": 14
+    },
+    "MUTHOOTFIN": {
+        "total_trades": 104,
+        "breakout": 3,
+        "change": -0.07,
+        "days": 15
+    },
+    "NATIONALUM": {
+        "total_trades": 108,
+        "breakout": 2,
+        "change": -0.1,
+        "days": 14
+    },
+    "NAUKRI": {
+        "total_trades": 34,
+        "breakout": 100,
+        "change": -0.07,
+        "days": 11
+    },
+    "NAVINFLUOR": {
+        "total_trades": 105,
+        "breakout": 3,
+        "change": -0.07,
+        "days": 14
+    },
+    "NTPC": {
+        "total_trades": 69,
+        "breakout": 16,
+        "change": -0.05,
+        "days": 13
+    },
+    "OBEROIRLTY": {
+        "total_trades": 82,
+        "breakout": 12,
+        "change": -0.09,
+        "days": 13
+    },
+    "OFSS": {
+        "total_trades": 94,
+        "breakout": 6,
+        "change": -0.05,
+        "days": 13
+    },
+    "ONGC": {
+        "total_trades": 84,
+        "breakout": 8,
+        "change": -0.07,
+        "days": 14
+    },
+    "PAGEIND": {
+        "total_trades": 67,
+        "breakout": 19,
+        "change": -0.07,
+        "days": 15
+    },
+    "PERSISTENT": {
+        "total_trades": 32,
+        "breakout": 100,
+        "change": -0.07,
+        "days": 9
+    },
+    "PETRONET": {
+        "total_trades": 106,
+        "breakout": 3,
+        "change": -0.06,
+        "days": 16
+    },
+    "PFC": {
+        "total_trades": 67,
+        "breakout": 21,
+        "change": -0.09,
+        "days": 16
+    },
+    "PIDILITIND": {
+        "total_trades": 98,
+        "breakout": 6,
+        "change": -0.06,
+        "days": 15
+    },
+    "PNB": {
+        "total_trades": 95,
+        "breakout": 5,
+        "change": -0.09,
+        "days": 16
+    },
+    "POLYCAB": {
+        "total_trades": 49,
+        "breakout": 6,
+        "change": -0.09,
+        "days": 11
+    },
+    "POWERGRID": {
+        "total_trades": 106,
+        "breakout": 3,
+        "change": -0.06,
+        "days": 14
+    },
+    "PVRINOX": {
+        "total_trades": 109,
+        "breakout": 2,
+        "change": -0.09,
+        "days": 15
+    },
+    "RAMCOCEM": {
+        "total_trades": 65,
+        "breakout": 19,
+        "change": -0.05,
+        "days": 13
+    },
+    "RBLBANK": {
+        "total_trades": 79,
+        "breakout": 2,
+        "change": -0.1,
+        "days": 12
+    },
+    "RELIANCE": {
+        "total_trades": 60,
+        "breakout": 28,
+        "change": -0.05,
+        "days": 13
+    },
+    "SAIL": {
+        "total_trades": 108,
+        "breakout": 2,
+        "change": -0.1,
+        "days": 15
+    },
+    "SBILIFE": {
+        "total_trades": 23,
+        "breakout": 100,
+        "change": -0.07,
+        "days": 15
+    },
+    "SBIN": {
+        "total_trades": 101,
+        "breakout": 4,
+        "change": -0.07,
+        "days": 17
+    },
+    "SHREECEM": {
+        "total_trades": 74,
+        "breakout": 16,
+        "change": -0.07,
+        "days": 15
+    },
+    "SRF": {
+        "total_trades": 84,
+        "breakout": 14,
+        "change": -0.08,
+        "days": 12
+    },
+    "SUNPHARMA": {
+        "total_trades": 32,
+        "breakout": 100,
+        "change": -0.07,
+        "days": 11
+    },
+    "SUNTV": {
+        "total_trades": 76,
+        "breakout": 13,
+        "change": -0.09,
+        "days": 15
+    },
+    "SYNGENE": {
+        "total_trades": 23,
+        "breakout": 100,
+        "change": -0.06,
+        "days": 12
+    },
+    "TATACHEM": {
+        "total_trades": 109,
+        "breakout": 2,
+        "change": -0.06,
+        "days": 14
+    },
+    "TATACOMM": {
+        "total_trades": 69,
+        "breakout": 19,
+        "change": -0.08,
+        "days": 14
+    },
+    "TATAPOWER": {
+        "total_trades": 70,
+        "breakout": 16,
+        "change": -0.07,
+        "days": 14
+    },
+    "TATASTEEL": {
+        "total_trades": 105,
+        "breakout": 3,
+        "change": -0.07,
+        "days": 15
+    },
+    "TCS": {
+        "total_trades": 37,
+        "breakout": 100,
+        "change": -0.07,
+        "days": 15
+    },
+    "TECHM": {
+        "total_trades": 109,
+        "breakout": 2,
+        "change": -0.06,
+        "days": 14
+    },
+    "TITAN": {
+        "total_trades": 104,
+        "breakout": 3,
+        "change": -0.06,
+        "days": 13
+    },
+    "TORNTPHARM": {
+        "total_trades": 41,
+        "breakout": 100,
+        "change": -0.05,
+        "days": 15
+    },
+    "TVSMOTOR": {
+        "total_trades": 42,
+        "breakout": 100,
+        "change": -0.04,
+        "days": 7
+    },
+    "UBL": {
+        "total_trades": 63,
+        "breakout": 23,
+        "change": -0.06,
+        "days": 13
+    },
+    "ULTRACEMCO": {
+        "total_trades": 105,
+        "breakout": 3,
+        "change": -0.05,
+        "days": 15
+    },
+    "UNITDSPR": {
+        "total_trades": 32,
+        "breakout": 100,
+        "change": -0.07,
+        "days": 13
+    },
+    "UPL": {
+        "total_trades": 33,
+        "breakout": 100,
+        "change": -0.07,
+        "days": 15
+    },
+    "VEDL": {
+        "total_trades": 48,
+        "breakout": 36,
+        "change": -0.09,
+        "days": 16
+    },
+    "WIPRO": {
+        "total_trades": 57,
+        "breakout": 28,
+        "change": -0.06,
+        "days": 14
+    },
+    "ZYDUSLIFE": {
+        "total_trades": 96,
+        "breakout": 5,
+        "change": -0.07,
+        "days": 15
+    }
+}
